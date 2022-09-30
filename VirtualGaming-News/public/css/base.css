@@ -1,0 +1,116 @@
+/* Header --------------------------- */
+
+.nav-top{
+
+    background: #1c1d2c;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: white;
+    max-width: 100%;
+    height: 55px;
+    align-items: center;
+    
+}
+/* hover sur le logo et le store car il est un lien de redirection a la page d'accueil  */
+.logo{
+    padding-left: 10px;  
+    color: white;
+    font-size: 26px;
+}
+.divNav{
+    display: flex;
+    justify-content: space-between;
+    width: 440px;
+    align-items: center;
+    
+}
+.library{
+
+    color: #c75914;
+    font-size: 22px;
+    height: auto;
+    width: auto;
+}
+.game_search{
+    border-radius: 15px;
+}
+.cgu_link{
+    color: #ffffff;
+}
+.about_link{
+    color: #ffffff;
+}
+
+.log{
+    
+    color: #c75914;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+/* nav vertical --------------*/
+
+.nav-vertical-left {
+    
+    width: 100px;
+    height: 200px;
+    display: block;
+    
+}
+/* hover sur le bouton pour ouvrir la liste des discution entre amis et aussi pour la librairie */
+.icons-left{
+    background-color: rgb(73, 73, 73) ;
+    border-radius: 35px;
+    display: block;
+    margin-top: 20px;
+    margin-left: 20px;
+    height: 60px;
+    width: 60px;
+    text-align: center;
+}
+.icons-left a{
+    padding-top: 30px;
+    color: #ffffff;
+}
+
+/* ---------------------------------- container */
+
+
+/*------------footer-------------*/ 
+
+footer{
+    
+    position: absolute;
+    display: block;
+    justify-content: space-around;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    align-items: center;
+}
+.link_media{
+    background: rgb(83, 83, 83);
+    height: 50px;
+    width: 350px;
+    margin: 0 auto;
+    align-items: center;
+    text-align: center;
+    
+    
+}
+.link_media a{
+   padding: 25px 20px ;
+    color: #c75914;
+}
+
+.copy {
+    background-color: #222222;
+    height: 50px;
+    color: white;
+    
+}
+.copy p{
+    text-align: center;
+    padding: 15px;
+}
