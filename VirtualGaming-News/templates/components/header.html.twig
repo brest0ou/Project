@@ -1,5 +1,56 @@
-<header>
-    {% block header %}
-        <h1> Le Header </h1>
-    {% endblock %}
-</header>
+{% block header %}
+
+        <nav class="nav-top"> 
+
+            <a class="logo " href="#">VirtualGaming News</a>
+            
+            <div class="divNav">
+
+                <a href="#" class="library hover">Store</a>
+
+                <form role="search" class="search_game">
+                    <input type="search" class="game_search" placeholder="  Rechercher un jeux" aria-label="Search">
+                </form>    
+
+                <a href="#" class="cgu_link"> CGU</a>
+
+                <a href="#" class="about_link">à Propos</a>
+              
+            </div>
+
+            <div class="log_in">
+                <a href="#" class="log">Log In / Sign Up</a>
+            </div>
+
+            <div class="dropdown_user_active" style="display: none;">
+
+                <a href="#" class="user-logo">
+                    <img src="#" alt="">
+                </a>
+
+                <ul class="dropdown-menu">
+                    <li><a href="#">Profil</a></li>
+                    <li><a href="#">Paramétre</a></li>
+                    <li><a href="#">Déconnexion</a></li>
+                </ul>
+
+            </div>
+        </nav>
+
+        {# nav vertical #}
+
+        <nav class="nav-vertical-left">
+        
+            <div class="icons-left">
+                <a href="#" class="fa-solid fa-user-group fa-2xl">
+                </a>
+            </div>
+
+            <div class="icons-left">
+                <a href="#"class="fa-solid fa-book-bookmark fa-2xl">
+                </a>
+            </div>
+
+        </nav>
+{% endblock %}
+
