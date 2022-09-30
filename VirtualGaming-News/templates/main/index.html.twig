@@ -1,8 +1,27 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Acceuil - {{ parent() }}{% endblock %}
+{% block title %}Acceuil - {{ parent() }} {% endblock %}
 
 {% block body %}
-<h1>Page d'accueil</h1>
-{% endblock %}
 
+    <div class="info-homepage">
+        <p>VirtualGaming New est une plateforme de.....</p>
+    </div>
+    <div class="best-game">
+        <h2>Meilleurs Jeux</h2>
+        <div class="grid-bg-img">
+            <div class="bloc-bg-img">
+                <img class="img-best-game" src="#" alt="#">
+            </div>
+        </div>
+    </div>
+    <div class="best-post">
+        <h2>Meilleurs Poste</h2>
+        <div class="gris-bp-img">
+            <div class="bloc-bp-img">
+                <img src="#" alt="#">
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

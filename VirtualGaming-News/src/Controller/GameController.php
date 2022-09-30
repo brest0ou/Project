@@ -15,6 +15,14 @@ class GameController extends AbstractController
         return $this->render('game/game.html.twig');
     }
 
+    
+    #[Route('/library', name: 'library')]
+    public function library(): Response
+    {
+        return $this->render('game/library.html.twig');
+    }
+
+
     #[Route('/download', name: 'download')]
     public function download(): Response
     {

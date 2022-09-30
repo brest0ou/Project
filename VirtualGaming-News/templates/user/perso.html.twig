@@ -3,6 +3,47 @@
 {% block title %} Page Personnel - {{ parent() }}{% endblock %}
 
 {% block body %}
-<h1>Page Interface utilisateur personnel</h1>
-{% endblock %}
 
+<!-- La carte d'information utilisateur -->
+
+<div class="container-card">
+    <div class="card-perso">
+        <div class="color-top"></div>
+        <div class="circle-img">
+            <img src="#" alt="#">
+        </div>
+        <div class="info-perso"></div>
+    </div>
+</div>
+
+<div class="description-perso">
+    <p>Description utilisateur</p>
+</div>
+
+<!-- nos onglet trophée-->
+
+<div class="container-trophy">
+    <div class="bloc-trophy">
+        <icon>1</icon>
+        <icon>2</icon>
+        <icon>3</icon>
+    </div>
+</div>
+
+<!-- Les postes de l'utilisateur -->
+
+<div class="container-post-perso">
+    <h3>Vos postes</h3>
+    <div class="card-post">
+        <img src="#" alt="#">
+        <div class="info-post">
+            <p>Titre: Zombitors</p>
+            <p>Date: 28/09/2022</p>
+        </div>
+        <div class="icon-post">
+            <icon>jaime</icon>
+            <icon>commentaire</icon>
+        </div>
+    </div>
+</div>
+{% endblock %}

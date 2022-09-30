@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion - Inscription{{ parent() }}{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="bloc-login">
+            <h2>log-in</h2>
+            <div class="form-login">
+                <p>brest0ou</p>
+                <p>monMotDePasse</p>
+            </div>
+        </div>
+        
+        <div class="bloc-signup">
+            <h2>sign-up</h2>
+            <div class="form-signup">
+                <p>username</p>
+                <p>email</p>
+                <p>mot de passe</p>
+                <p>prénom</p>
+            </div>
+        </div>
+        <div class="bloc-cgu">
+            <p>Veuillez lire et validez nos conditions d'utilisation</p>
+            <button class="btn">condition d'utilisation</button>
+        </div>
+        
+    </div>
+{% endblock %}

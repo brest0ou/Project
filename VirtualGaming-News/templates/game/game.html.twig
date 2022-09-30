@@ -3,7 +3,81 @@
 {% block title %}Jeu - {{ parent() }}{% endblock %}
 
 {% block body %}
-<h1>Page de jeu</h1>
+    <div class="container-infogame">
+        <!-- La carte d'information utilisateur -->
+        <div class="bloc-top">
+            <img src="#" alt="#">
+            <img class="logo-game" src="" alt="">
+            <h2>Nom du jeu</h2>
+        </div>
+
+        <!-- La carte d'information utilisateur -->
+        <div class="bloc-middle">
+            <img src="#" alt="#">
+            <ul>
+                <li>Horreur</li>
+                <li>Aventure</li>
+                <li>Action</li>
+            </ul>
+        </div>
+
+        <!-- La carte d'information utilisateur -->
+        <div class="bloc-bot">
+            <div class="sm-bloc-left">
+                <div class="description-game">
+                    <div class="price">
+                        <p>Prix: 9 €</p>
+                    </div>
+                    <p>Description du jeu franchement on a pas le choix c’est trop 
+                    bien la description oura une description !! xD mdr lol ptdr 
+                    ok j’arrête j’ai craqué après c’est toujours mieux que 
+                    un lorem ipsum !,on dirait un sort de harry potter...</p>
+                </div>
+            </div>
+            <div class="sm-bloc-right">
+                <p>poids: 1 GB</p>
+                <div class="get-file">
+                    <p>récupère les fichier !</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="btn">poster un article</button>
+    <!-- Si on appuye sur le boutton alors le popup du formulaire crée un article apparait-->
+    
+    <div class="form-popup">
+        <div class="container-form-popup">
+            <!-- ici faut mettre le formulaire-->
+        </div>
+    </div>
+    
+    <div class="container-post-game">
+        
+        <h2>Poste</h2>
+        <div class="card-post-game">
+            <img class="logo-user" src="" alt="">
+            <p>Gauthier</p>
+            <div class="info-post">
+                <p>Titre: Zombitors</p>
+                <p>Date: 28/09/2022</p>
+            </div>
+            <div class="icon-post">
+                <icon>jaime</icon>
+                <icon>commentaire</icon>
+            </div>
+        </div>
+        <div class="card-post-game">
+            <img class="logo-user" src="" alt="">
+            <p>Brest0ou</p>
+            <div class="info-post">
+                <p>Titre: Dinolands</p>
+                <p>Date: 28/09/2022</p>
+            </div>
+            <div class="icon-post">
+                <icon>jaime</icon>
+                <icon>commentaire</icon>
+            </div>
+        </div>
+    </div>
 {% endblock %}
-
-

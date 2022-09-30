@@ -21,16 +21,9 @@ class MainController extends AbstractController
         return $this->render('main/about.html.twig');
     }
 
-    #[Route('/store', name: 'store')]
-    public function library(): Response
-    {
-        return $this->render('main/store.html.twig');
-    }
-
-    #[Route('cgu', name: 'cgu')]
+    #[Route('/cgu', name: 'cgu')]
     public function cgu(): Response
     {
         return $this->render('main/cgu.html.twig');
     }
 }
-

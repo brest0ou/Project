@@ -9,16 +9,11 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/user', name: 'user_')]
 class UserController extends AbstractController
 {
-    #[Route('/register', name: 'register')]
-    public function register(): Response
-    {
-        return $this->render('user/register.html.twig');
-    }
 
-    #[Route('/login', name: 'login')]
+    #[Route('/login-register', name: 'login_register')]
     public function login(): Response
     {
-        return $this->render('user/login.html.twig');
+        return $this->render('user/login_register.html.twig');
     }
 
     #[Route('/perso', name: 'perso')]
