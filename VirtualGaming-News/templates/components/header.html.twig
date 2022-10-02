@@ -2,29 +2,29 @@
 
         <nav class="nav-top"> 
 
-            <a class="logo " href="">VirtualGaming News</a>
+            <a class="logo " href="{{path('main_index')}}">VirtualGaming News</a>
             
             <div class="divNav">
 
-                <a href="#" class="library hover">Store</a>
+                <a href="{{path('game_library')}}" class="library hover">Store</a>
 
                 <form role="search" class="search_game">
                     <input type="search" class="game_search" placeholder="  Rechercher un jeux" aria-label="Search">
                 </form>    
 
-                <a href="#" class="cgu_link"> CGU</a>
+                <a href="{{path('main_cgu')}}" class="cgu_link"> CGU</a>
 
-                <a href="#" class="about_link">à Propos</a>
+                <a href="{{path('main_about')}}" class="about_link">à Propos</a>
               
             </div>
 
             <div class="log_in">
-                <a href="#" class="log">Log In / Sign Up</a>
+                <a href="{{path('user_login_register')}}" class="log">Log In / Sign Up</a>
             </div>
 
             <div class="dropdown_user_active" style="display: none;">
 
-                <a href="#" class="user-logo">
+                <a href="{{path('user_perso')}}" class="user-logo">
                     <img src="#" alt="">
                 </a>
 
