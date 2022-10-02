@@ -3,6 +3,27 @@
 {% block title %}Library - {{ parent() }}{% endblock %}
 
 {% block body %}
-<h1>Page library</h1>
+    <h1>Librairie</h1>
+    <div class="filter-game">
+        <label for="">Filtre par type de jeu</label>
+        <select name="game-select" id="game-select">
+            <optgroup>
+                <option value="#">Tout</option>
+                <option value="#">Aventure</option>
+                <option value="#">Science-fiction</option>
+                <option value="#">Horreur</option>
+                <option value="#">Action</option>
+            </optgroup>
+        </select>
+        <button>valider</button>
+    </div>
+    
+    <!-- Grille de jeu -->
+    <div class="grid-library-game">
+        <div class="card-game">
+            <img src="#" alt="">
+            <p>text</p>
+        </div>
+    </div>
 {% endblock %}
 
