@@ -14,16 +14,15 @@ class MainController extends AbstractController
     {
         return $this->render('main/index.html.twig');
     }
-
+    #[Route('/cgu', name: 'cgu')]
+    public function cgu(): Response
+    {
+        return $this->render('main/cgu.html.twig');
+    }
     #[Route('/about', name: 'about')]
     public function about(): Response
     {
         return $this->render('main/about.html.twig');
     }
 
-    #[Route('/cgu', name: 'cgu')]
-    public function cgu(): Response
-    {
-        return $this->render('main/cgu.html.twig');
-    }
 }

@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/user', name: 'user_')]
 class UserController extends AbstractController
 {
-
+//  pour s'aider voir le cours ludoteck du pro pour la parti login/register/lougout = usercontroller.php
     #[Route('/login-register', name: 'login_register')]
     public function login(): Response
     {
