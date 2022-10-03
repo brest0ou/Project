@@ -12,18 +12,20 @@
             </div>
         </div>
         
+        
         <div class="bloc-signup">
-            <h2>sign-up</h2>
-            <div class="form-signup">
-                <p>username</p>
-                <p>email</p>
-                <p>mot de passe</p>
-                <p>prénom</p>
+            {{ form_start(form) }}
+
+            {{ form_row(form.username) }}
+            {{ form_row(form.email) }}
+            {{ form_row(form.Password) }}
+                <p>Veuillez lire et validez nos conditions d'utilisation</p>
+                <button class="btn">condition d'utilisation</button>
+            <div class="form-end">
+                <button class="button">Confirmer</button>
             </div>
-        </div>
-        <div class="bloc-cgu">
-            <p>Veuillez lire et validez nos conditions d'utilisation</p>
-            <button class="btn">condition d'utilisation</button>
+            {{ form_end(form) }}
+            
         </div>
         
     </div>
