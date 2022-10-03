@@ -48,6 +48,9 @@ class User
     #[ORM\OneToMany(mappedBy: 'comments', targetEntity: Comment::class)]
     private Collection $comments;
 
+    #[ORM\Column(length: 255)]
+    private ?string $picture = null;
+
     public function __construct()
     {
         $this->games = new ArrayCollection();
@@ -242,6 +245,18 @@ class User
                 $comment->setComments(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getPicture(): ?string
+    {
+        return $this->picture;
+    }
+
+    public function setPicture(string $picture): self
+    {
+        $this->picture = $picture;
 
         return $this;
     }
