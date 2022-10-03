@@ -3,7 +3,7 @@
 {% block title %}Téléchargement - {{ parent() }}{% endblock %}
 
 {% block body %}
-    <main class="container_download">
+    <main class="container_download" style="margin-top:100px; margin-bottom:100px; color: white; text-align:center;">
     
         <h1>Ajouter un jeu</h1>
 
@@ -19,22 +19,24 @@
 
         <div class="form-aligned">
             {{ form_row(form.price) }}
-            {{ form_row(form.totalweight) }}
+            {{ form_row(form.totalWeight) }}
         </div>
 
         <div class="form-aligned">
-            {{ form_row(form.category) }}
-            {{ form_row(form.editors) }}
+            
+            {{ form_row(form.develop) }}
+            {{ form_row(form.users) }}
+            {{ form_row(form.status) }}
         </div>
 
-            {{ form_row(form.develop) }}
+            {{ form_row(form.gamesCategory) }}
 
         <div class="form-end">
             <button class="button">Ajouter</button>
         </div>
 
         {{ form_end(form) }}
-        
+
     </main>
 {% endblock %}
 

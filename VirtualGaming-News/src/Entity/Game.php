@@ -7,6 +7,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints\Assert;
 
 #[ORM\Entity(repositoryClass: GameRepository::class)]
 class Game
@@ -36,9 +37,6 @@ class Game
 
     #[ORM\Column(length: 50)]
     private ?string $develop = null;
-
-    #[ORM\Column(nullable: true)]
-    private ?int $follow = null;
 
     #[ORM\Column(length: 50)]
     private ?string $status = null;
@@ -158,18 +156,6 @@ class Game
         return $this;
     }
 
-    public function getFollow(): ?int
-    {
-        return $this->follow;
-    }
-
-    public function setFollow(?int $follow): self
-    {
-        $this->follow = $follow;
-
-        return $this;
-    }
-
     public function getStatus(): ?string
     {
         return $this->status;
@@ -230,7 +216,6 @@ class Game
     {
         if (!$this->postsGames->contains($postsGame)) {
             $this->postsGames->add($postsGame);
-            $postsGame->setGamesPosts($this);
         }
 
         return $this;
@@ -238,12 +223,7 @@ class Game
 
     public function removePostsGame(Post $postsGame): self
     {
-        if ($this->postsGames->removeElement($postsGame)) {
-            // set the owning side to null (unless already changed)
-            if ($postsGame->getGamesPosts() === $this) {
-                $postsGame->setGamesPosts(null);
-            }
-        }
+        $this->postsGames->removeElement($postsGame);
 
         return $this;
     }
