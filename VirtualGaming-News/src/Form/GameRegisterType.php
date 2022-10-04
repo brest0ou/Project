@@ -8,6 +8,7 @@ use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\MoneyType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -36,7 +37,14 @@ class GameRegisterType extends AbstractType
             ->add('develop', FileType::class,[
                 'label' => 'Fichier :'
             ])
-            ->add('status')
+            ->add('status', ChoiceType::class,[
+                'label' => 'Stade de dévellopement du jeux :',
+                'choices' => 
+                [
+                 'Version Alpha' => "Version Alpha",
+                 'Version Bêta' => "Version Bêta",
+                ]
+            ])
             ->add('createdat', DateType::class, array(
                 'label' => "Date de création",
                 'input' => 'datetime_immutable',
@@ -46,7 +54,7 @@ class GameRegisterType extends AbstractType
                 'input' => 'datetime_immutable',
             ))
             ->add('gamesCategory' )
-            
+
             ->add('users', null, [
                 'label' => 'créateur',
                 'choice_label' => 'username',

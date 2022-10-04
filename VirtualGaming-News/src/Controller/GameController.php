@@ -3,8 +3,10 @@
 namespace App\Controller;
 
 use App\Entity\Game;
+use App\Entity\Post;
 use App\Repository\GameRepository;
 use App\Form\GameRegisterType;
+use App\Form\PostRegisterType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
@@ -20,10 +22,14 @@ class GameController extends AbstractController
     }
     
     #[Route('/{id}', name: 'games', requirements: ["id" => "\d+"])]
-    public function game(Game $game): Response
+    public function game(Game $game , Request $request): Response
     {
+        $post = new Post();
+        $form = $this->createForm(PostRegisterType::class , $post );
+
+        $form->handleRequest($request);
         return $this->render('game/game.html.twig', [
-            'game' => $game
+            'game' => $game, 'form' => $form->createView(),
         ]);
     }
     

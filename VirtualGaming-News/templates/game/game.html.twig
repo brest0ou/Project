@@ -3,7 +3,8 @@
 {% block title %}Jeu - {{ parent() }}{% endblock %}
 
 {% block body %}
-    <div class="container-infogame" style="margin-top: 100px; text-align:center; color:white;">
+<main style="margin-top: 100px; text-align:center; color:white;">
+    <div class="container-infogame" >
         <!-- La carte d'information utilisateur -->
         <div class="bloc-top">
             <img src="#" alt="#">
@@ -14,11 +15,7 @@
         <!-- La carte d'information utilisateur -->
         <div class="bloc-middle">
             <img src="#" alt="#">
-            <ul>
-                <li>Horreur</li>
-                <li>Aventure</li>
-                <li>Action</li>
-            </ul>
+           
         </div>
             <h4></h4>
         <!-- La carte d'information utilisateur -->
@@ -27,6 +24,7 @@
                 <div class="description-game">
                     <div class="price">
                         <p>{{game.price}}</p>
+                        <p>{{game.picture}}</p>
                     </div>
                     <p> {{game.description}}</p>
                 </div>
@@ -40,13 +38,14 @@
             </div>
         </div>
     </div>
-
-    <button class="btn">poster un article</button>
+   
+     {{form(form)}}
     <!-- Si on appuye sur le boutton alors le popup du formulaire crée un article apparait-->
-    
+    <button class="btn">poster un article</button>
     <div class="form-popup">
         <div class="container-form-popup">
             <!-- ici faut mettre le formulaire-->
         </div>
     </div>
+</main>
 {% endblock %}
