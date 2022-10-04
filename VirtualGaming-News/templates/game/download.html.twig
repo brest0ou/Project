@@ -11,15 +11,14 @@
 
             {{ form_row(form.name) }}
             {{ form_row(form.description) }}
-
-        <div class="form-aligned">
             {{ form_row(form.picture) }}
-            {{ form_row(form.duration) }}
-        </div>
+            {{ form_row(form.price) }}
 
         <div class="form-aligned">
-            {{ form_row(form.price) }}
             {{ form_row(form.totalWeight) }}
+            {{ form_row(form.duration) }}
+            {{ form_row(form.createdat) }}
+            {{ form_row(form.updateat) }}
         </div>
 
         <div class="form-aligned">
@@ -27,10 +26,9 @@
             {{ form_row(form.develop) }}
             {{ form_row(form.users) }}
             {{ form_row(form.status) }}
-        </div>
-
             {{ form_row(form.gamesCategory) }}
-
+        </div>
+            
         <div class="form-end">
             <button class="button">Ajouter</button>
         </div>

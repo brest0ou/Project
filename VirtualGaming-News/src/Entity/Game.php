@@ -47,6 +47,7 @@ class Game
     #[ORM\Column]
     private ?\DateTimeImmutable $updateAt = null;
 
+    
     #[ORM\ManyToOne(inversedBy: 'games')]
     #[ORM\JoinColumn(nullable: false)]
     private ?User $users = null;
@@ -191,6 +192,7 @@ class Game
 
         return $this;
     }
+    // erreur user is not possible String
 
     public function getUsers(): ?User
     {

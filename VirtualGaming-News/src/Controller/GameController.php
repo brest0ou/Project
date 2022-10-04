@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Controller;
+
 use App\Entity\Game;
-// use App\Repository\GameRepository;
+use App\Repository\GameRepository;
 use App\Form\GameRegisterType;
-// use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
@@ -14,6 +14,10 @@ use Symfony\Component\Routing\Annotation\Route;
 #[Route('/game', name:'game_')]
 class GameController extends AbstractController
 {
+    public function __construct(private GameRepository $gameRepository)
+    {
+        
+    }
     #[Route('', name: 'game')]
     public function index(): Response
     {
@@ -35,7 +39,8 @@ class GameController extends AbstractController
         $form = $this->createForm(GameRegisterType::class, $game);
 
         $form->handleRequest($request);
-        if($form->isSubmitted() && $form->isValid()){
+        if($form->isSubmitted() && $form->isValid())
+        {
             $this->gameRepository->add($game, true);
 
             $this->addFlash('success', 'Jeu sauvegardé !');
