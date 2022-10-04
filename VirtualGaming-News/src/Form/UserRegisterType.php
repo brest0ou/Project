@@ -59,6 +59,9 @@ class UserRegisterType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => User::class,
+            /*'attr' => [
+                'novalidate' => 'novalidate', //on dit a google laisse moi envoyer mes donnée même si j'ai pas tout saisie ( c'est bien pour tester )
+            ]*/
         ]);
     }
 }
