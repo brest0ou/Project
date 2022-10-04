@@ -18,12 +18,14 @@ class GameController extends AbstractController
     {
         
     }
-    #[Route('', name: 'game')]
-    public function index(): Response
+    
+    #[Route('/{id}', name: 'games', requirements: ["id" => "\d+"])]
+    public function game(Game $game): Response
     {
-        return $this->render('game/game.html.twig');
+        return $this->render('game/game.html.twig', [
+            'game' => $game
+        ]);
     }
-
     
     #[Route('/library', name: 'library')]
     public function library(): Response
@@ -44,7 +46,7 @@ class GameController extends AbstractController
             $this->gameRepository->add($game, true);
 
             $this->addFlash('success', 'Jeu sauvegardé !');
-            return $this->redirectToRoute('game_game', [
+            return $this->redirectToRoute('game_games', [
                 'id' => $game->getId(),
             ]);
         }
