@@ -34,7 +34,7 @@ class User
     private ?string $firstname = null;
 
     #[ORM\Column]
-    private ?bool $isEnable = null;
+    private ?bool $isEnable = true;
 
     #[ORM\Column]
     private ?\DateTimeImmutable $createdAt = null;

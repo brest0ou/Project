@@ -13,17 +13,22 @@
         </div>
         
         
-        <div class="bloc-signup">
+        <div class="bloc-signup" style="margin-top:100px; margin-bottom:100px; color: white;text-align:center;">
+            
             {{ form_start(form) }}
 
-            {{ form_row(form.username) }}
-            {{ form_row(form.email) }}
-            {{ form_row(form.Password) }}
-                <p>Veuillez lire et validez nos conditions d'utilisation</p>
-                <button class="btn">condition d'utilisation</button>
-            <div class="form-end">
-                <button class="button">Confirmer</button>
-            </div>
+                {{ form_row(form.username) }}
+                {{ form_row(form.email) }}
+                {{ form_row(form.password) }}
+                {{ form_row(form.lastname) }}
+                {{ form_row(form.firstname) }}
+                {{ form_row(form.picture) }}
+                {{ form_row(form.roles) }}
+                {{ form_row(form.createdat) }}
+                <div class="form-end">
+                    <button class="button">Confirmer</button>
+                </div>
+
             {{ form_end(form) }}
             
         </div>

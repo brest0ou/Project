@@ -3,51 +3,39 @@
 {% block title %}Téléchargement - {{ parent() }}{% endblock %}
 
 {% block body %}
-
-    <div  class="container-text" style="background-color:aqua">
-        <h1>Ajouter votre jeu</h1>
-        <h2>Première étape</h2>
-    </div>
+    <main class="container_download" style="margin-top:100px; margin-bottom:100px; color: white; text-align:center;">
     
+        <h1>Ajouter un jeu</h1>
 
-    <div class="-bloc-first-step" style="background-color:green">
-        <div class="top">
-            <div class="sm-card">
-                <p>DevLog uniquement</p>
-            </div>
-            <p>Vous n'avez pas encore rien de jouable mais vous souhaitez partager le développement actif du jeu.</p>
+        {{ form_start(form) }}
+
+            {{ form_row(form.name) }}
+            {{ form_row(form.description) }}
+            {{ form_row(form.picture) }}
+            {{ form_row(form.price) }}
+
+        <div class="form-aligned">
+            {{ form_row(form.totalWeight) }}
+            {{ form_row(form.duration) }}
+            {{ form_row(form.createdat) }}
+            {{ form_row(form.updateat) }}
         </div>
 
-        <div class="middle">
-            <div class="sm-card">
-                <p>Accès anticipé</p>
-            </div>
-            <p>Vous n'avez pas encore rien de jouable mais vous souhaitez partager le développement actif du jeu.</p>
+        <div class="form-aligned">
+            
+            {{ form_row(form.develop) }}
+            {{ form_row(form.users) }}
+            {{ form_row(form.status) }}
+            {{ form_row(form.gamesCategory) }}
+        </div>
+            
+        <div class="form-end">
+            <button class="button">Ajouter</button>
         </div>
 
-        <div class="bottom">
-            <div class="sm-card">
-                <p>Complète/stable</p>
-            </div>
-            <p>Vous n'avez pas encore rien de jouable mais vous souhaitez partager le développement actif du jeu.</p>
-        </div>
-    </div>
-    
-    <div class="bloc-second-step" style="background-color:coral" >
-        <form action="post">
-            <label for="name">Nom du jeu</label>
-            <input type="text" name="name" id="name">
-            <label for="logo">logo</label>
-            <input type="file" name="logo" id="logo">
-            <label for="image">image</label>
-            <input type="file" name="image" id="image">
-            <label for="categorie">catégorie</label>
-            <input type="text" name="categorie" id="categorie">
-            <label for="description">description</label>
-            <input type="text" name="description" id="description">
-        </form>
-        <button type"submit">Ajouter un jeu</button>
-    </div>
+        {{ form_end(form) }}
+
+    </main>
 {% endblock %}
 
 
