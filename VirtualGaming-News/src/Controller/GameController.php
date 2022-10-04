@@ -35,7 +35,7 @@ class GameController extends AbstractController
     #[Route('/download', name: 'download')]
     public function download(Request $request): Response
     {
-        $game = new Game();
+        $game= new Game();
         $form = $this->createForm(GameRegisterType::class, $game);
 
         $form->handleRequest($request);
@@ -48,7 +48,7 @@ class GameController extends AbstractController
                 'id' => $game->getId(),
             ]);
         }
-
+        
         return $this->render('game/download.html.twig', [
             'form' => $form->createView(),
         ]);

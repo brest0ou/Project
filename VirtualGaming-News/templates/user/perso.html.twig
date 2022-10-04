@@ -5,45 +5,52 @@
 {% block body %}
 
 <!-- La carte d'information utilisateur -->
+<main style="margin-top: 100px; text-align:center; color:white;">
+    <div class="container-card">
+        <div class="card-perso">
+            <div class="color-top"></div>
+            <div class="circle-img">
+                <img src="#" alt="#">
+            </div>
+            <div class="info-perso"></div>
+        </div>
+    </div>
 
-<div class="container-card">
-    <div class="card-perso">
-        <div class="color-top"></div>
-        <div class="circle-img">
+    <div class="description-perso">
+        
+        <p>{{user.username}}</p>
+        <p>{{user.email}}</p>
+        <p>{{user.roles}}</p>
+        <p>looping</p>
+        
+    </div>
+
+    <!-- nos onglet trophée-->
+
+    <div class="container-trophy">
+        <div class="bloc-trophy">
+            <icon>1</icon>
+            <icon>2</icon>
+            <icon>3</icon>
+        </div>
+    </div>
+
+    <!-- Les postes de l'utilisateur -->
+
+    <div class="container-post-perso">
+        <h3>Vos postes</h3>
+        <div class="card-post">
             <img src="#" alt="#">
-        </div>
-        <div class="info-perso"></div>
-    </div>
-</div>
-
-<div class="description-perso">
-    <p>Description utilisateur</p>
-</div>
-
-<!-- nos onglet trophée-->
-
-<div class="container-trophy">
-    <div class="bloc-trophy">
-        <icon>1</icon>
-        <icon>2</icon>
-        <icon>3</icon>
-    </div>
-</div>
-
-<!-- Les postes de l'utilisateur -->
-
-<div class="container-post-perso">
-    <h3>Vos postes</h3>
-    <div class="card-post">
-        <img src="#" alt="#">
-        <div class="info-post">
-            <p>Titre: Zombitors</p>
-            <p>Date: 28/09/2022</p>
-        </div>
-        <div class="icon-post">
-            <icon>j'aime</icon>
-            <icon>commentaire</icon>
+            <div class="info-post">
+                <p>Titre: Zombitors</p>
+                <p>Date: 28/09/2022</p>
+            </div>
+            <div class="icon-post">
+                <icon>j'aime</icon>
+                <icon>commentaire</icon>
+            </div>
         </div>
     </div>
-</div>
+</main>
+
 {% endblock %}

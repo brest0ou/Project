@@ -44,8 +44,8 @@ class UserRegisterType extends AbstractType
             ->add('roles', ChoiceType::class,[
                 'choices' => 
                 [
-                 'dévellopeur' => 1,
-                 'Visiteur' => 2
+                 'dévellopeur' => "Développeur",
+                 'Visiteur' => "Visiteur",
                 ]
             ])
             ->add('createdat', DateType::class, array(
