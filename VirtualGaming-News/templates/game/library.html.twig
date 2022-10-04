@@ -4,12 +4,13 @@
 
 {% block body %}
     <h1>Librairie</h1>
-    <div class="filter-game">
+    <div class="filter-game" style="margin-top: 100px; text-align:center; color:white;">
         <label for="">Filtre par type de jeu</label>
         <select name="game-select" id="game-select">
-            <optgroup>
-                {# <option value="#">{{Category.name}}</option> #}
-            </optgroup>
+            <option value="0">Tout</option>
+            {% for category in category %}
+                <option value="{{category.id}}">{{category.name}}</option>
+            {% endfor %}
         </select>
         <button>valider</button>
     </div>

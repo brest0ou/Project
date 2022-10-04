@@ -17,6 +17,7 @@ class Game
     #[ORM\Column]
     private ?int $id = null;
 
+    
     #[ORM\Column(length: 50)]
     private ?string $name = null;
 
@@ -235,6 +236,7 @@ class Game
      */
     public function getGamesCategory(): Collection
     {
+        
         return $this->gamesCategory;
     }
 

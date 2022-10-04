@@ -10,7 +10,6 @@ use App\Form\PostRegisterType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
-
 use Symfony\Component\Routing\Annotation\Route;
 
 #[Route('/game', name:'game_')]
@@ -34,9 +33,11 @@ class GameController extends AbstractController
     }
     
     #[Route('/library', name: 'library')]
-    public function library(): Response
+    public function library(CategoryRepository $categoryRepository): Response
     {
-        return $this->render('game/library.html.twig');
+        // $category = $categoryRepository->findBy(array('id' => [1,2,3,4,5,6,7,8,9]));
+        $category = $categoryRepository->findBy([],['name' => 'ASC']);
+        return $this->render('game/library.html.twig',['category' => $category,]);
     }
 
 
@@ -56,7 +57,7 @@ class GameController extends AbstractController
                 'id' => $game->getId(),
             ]);
         }
-        
+       
         return $this->render('game/download.html.twig', [
             'form' => $form->createView(),
         ]);

@@ -70,6 +70,9 @@ class GameRegisterType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => Game::class,
+            /*'attr' => [
+                'novalidate' => 'novalidate',
+            ]*/
         ]);
     }
 }
