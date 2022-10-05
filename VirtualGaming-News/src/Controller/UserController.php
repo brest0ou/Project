@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\UserRegisterType;
+use App\Services\imageUploader;
 use App\Repository\UserRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -23,14 +24,23 @@ class UserController extends AbstractController
     #[Route('/login-register', name: 'login_register')]
     public function login(
         Request $request,
-        UserRepository $userRepository
+        UserRepository $userRepository,
+        imageUploader $imageUploader,
     ): Response {
+
 
         $user = new User();
         $form = $this->createForm(UserRegisterType::class, $user);
         $form->handleRequest($request);
-        
+        // controller pour les images
+        $file = $form->get('picture')->getData();
+
         if ($form->isSubmitted() && $form->isValid()) {
+
+            if ($file) {
+                $FileName = $imageUploader->upload($file);
+                $user->setPicture($FileName);
+            }
 
             $userRepository->add($user, true);
             $this->addFlash('success', 'Compte créé');

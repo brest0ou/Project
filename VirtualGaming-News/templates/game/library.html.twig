@@ -28,24 +28,17 @@
         {% for game in game %}
             <div class="card-game">
 
-                <img src="{{ asset('asset/images/cool.jpg' ) }}" alt="">
+                <img src="{{ asset('images/' ~ game.Picture ) }}" alt="">
 
                 <div class="game-card-info">
                     <p>Nom Du Jeux :{{game.name}}</p>
                     <span>Prix : {{game.price}}</span>
                 </div>
-
             
-                {# <a href="#" >{{user.username}}</a> #}
-        
-            
-
+                <a href="#" >{{game.Users}}</a>
             </div>
         {% endfor %}
-        
-
     </div>
-
 </main>
 {% endblock %}
 

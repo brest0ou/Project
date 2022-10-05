@@ -10,7 +10,6 @@ use App\Repository\CategoryRepository;
 use App\Services\imageUploader;
 use App\Form\GameRegisterType;
 use App\Form\PostRegisterType;
-use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
@@ -37,12 +36,11 @@ class GameController extends AbstractController
     }
     
     #[Route('/library', name: 'library')]
-    public function library(CategoryRepository $categoryRepository, GameRepository $gameRepository, UserRepository $user): Response
+    public function library(CategoryRepository $categoryRepository, GameRepository $gameRepository): Response
     {
         $category = $categoryRepository->findBy([],['name' => 'ASC']);
         $games = $gameRepository->findAll();
-        $user = $user->findAll();
-        return $this->render('game/library.html.twig',['category' => $category, 'game' => $games, 'user' => $user]);
+        return $this->render('game/library.html.twig',['category' => $category, 'game' => $games]);
     }
 
 
@@ -51,16 +49,14 @@ class GameController extends AbstractController
     {
         $game= new Game();
         $form = $this->createForm(GameRegisterType::class, $game);
-
-
-
         $form->handleRequest($request);
+
         if($form->isSubmitted() && $form->isValid())
         {
             // controller pour les images
-            $file = $form->get('picture')->getData();
-            if ($file) {
-                $FileName = $imageUploader->upload($file);
+            $files = $form->get('picture')->getData();
+            if ($files) {
+                $FileName = $imageUploader->upload($files);
                 $game->setPicture($FileName);
             }
 
