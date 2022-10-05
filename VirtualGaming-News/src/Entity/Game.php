@@ -287,6 +287,7 @@ class Game
     }
     public function __toString()
     {
-        return $this->getname();
+        return $this->getName();
     }
+ 
 }

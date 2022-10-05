@@ -54,7 +54,8 @@ class GameRegisterType extends AbstractType
                 'label' => "Date de Prochaine mise à jour",
                 'input' => 'datetime_immutable',
             ))
-            ->add('gamesCategory' )
+            ->add('gamesCategory')
+            
 
             ->add('users', null, [
                 'label' => 'créateur',

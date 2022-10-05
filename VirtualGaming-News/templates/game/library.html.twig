@@ -12,6 +12,7 @@
     <div class="filter-game" >
         <label for="">Filtre par type de jeu</label>
         <select name="game-select" id="game-select">
+            
             <option value="0">Tout</option>
             {% for category in category %}
                 <option value="{{category.id}}">{{category.name}}</option>
