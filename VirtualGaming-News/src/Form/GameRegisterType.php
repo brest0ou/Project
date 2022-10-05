@@ -54,16 +54,14 @@ class GameRegisterType extends AbstractType
                 'label' => "Date de Prochaine mise à jour",
                 'input' => 'datetime_immutable',
             ))
-            ->add('gamesCategory')
+            ->add('gamesCategory',null,[
+                'label' => 'Catégorie du jeu',
+            ])
             
 
             ->add('users', null, [
-                'label' => 'créateur',
-                'choice_label' => 'username',
-                'expanded' => true,
-                'attr' => [
-                    'class' => 'checkbox-list'
-                ]
+                'label' => 'Créateur du jeux :',
+                'required'   => false,
             ])
         ;
     }

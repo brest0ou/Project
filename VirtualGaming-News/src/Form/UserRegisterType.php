@@ -44,13 +44,14 @@ class UserRegisterType extends AbstractType
             ->add('roles', ChoiceType::class,[
                 'choices' => 
                 [
-                 'dévellopeur' => "Développeur",
+                 'Dévellopeur' => "Développeur",
                  'Visiteur' => "Visiteur",
                 ]
             ])
             ->add('createdat', DateType::class, array(
                 'label' => 'Date de création du compte',
-                'input' => 'datetime_immutable',
+                'data' => new \DateTime(),
+                
             ))
         ;
     }

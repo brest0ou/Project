@@ -1,6 +1,20 @@
 body{
     background-color: #2f354e;
 }
+h2{
+    color: #ce611d;
+    font-size: 30px;
+    text-align: center;
+    margin: 20px;
+}
+hr{
+    opacity:inherit ;
+}
+hr:not([size]) {
+    color: #124aab;
+    height: 2px;
+    border-radius: 20px;
+}
 /* -----------------Header ----------------- */
 
 .nav-top{
@@ -93,12 +107,77 @@ body{
     color: #ffffff;
     font-size: 24px;
     background-color:#222222;
+    border-radius: 20px;
 }
 .best-bloc {
     margin-top: 50px;
     margin-bottom: 50px;
-    height: 500px;
-    background-color: #ffffff;
+    height: 420px;
+    /* background-color: #ffffff; */
+}
+.grid-bg{
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+.card-maxgame{
+    margin: 50px auto;
+    background-color: #212128;
+    height: 280px;
+    width: 250px;
+    border-radius: 8px;
+    display: block;
+    font-size: 13px;
+}
+.card-maxgame img{
+    width: 100%;
+    height:246px;
+    border-radius: 5px;
+}
+.game-card-max{
+    display: flex;
+    justify-content: space-between;
+}
+.game-card-max p{
+    padding-left: 5px;
+}
+.game-card-max span{
+    padding-right: 5px;
+
+}
+.card-maxgame a{
+    padding-left: 5px;
+
+}
+/* -------meilleurpost */
+.card-mingame{
+    margin: 50px auto;
+    background-color: #212128;
+    height: 280px;
+    width: 250px;
+    border-radius: 8px;
+    display: block;
+    font-size: 13px;
+}
+.card-mingame img{
+    width: 100%;
+    height:246px;
+    border-radius: 5px;
+}
+.game-card-min{
+    display: flex;
+    justify-content: space-between;
+}
+.game-card-min p{
+    padding-left: 5px;
+}
+.game-card-min span{
+    padding-right: 5px;
+
+}
+.card-mingame a{
+    padding-left: 5px;
+
 }
 
 /*---------------game/post Diogo--------------*/
@@ -116,12 +195,6 @@ body{
     padding-top: 100px;
     width: 1200px;
     color: white;
-}
-.container-library h2{
-    text-align: center;
-    font-size: 30px;
-    color: #c75914;
-    margin: 20px;
 }
 .filter-game{
     text-align: center;
@@ -175,12 +248,6 @@ body{
     width: 800px;
     color: white;
 }
-.container-download h2{
-    text-align: center;
-    font-size: 30px;
-    color: #c75914;
-    margin: 20px;
-}
 .form-end{
     margin: 40px;
     text-align: center;
@@ -195,20 +262,28 @@ body{
 
 .container-log{
     margin: 0 auto;
-    width: 800px;
+    width: 500px;
     color: white;
 }
-.bloc-login{
-    padding: 20px;
+.toptop{
+    padding: 100px 20px 20px 20px;
+    
 }
+.mailsign p{
+    margin-bottom: 7px;
+}
+
 .bloc-signup{
     padding: 20px;
 }
-.bloc-signup h2{
+.button-signin{
+    margin: 40px;
     text-align: center;
-    color: #c75914;
-    font-size: 30px;
-    margin: 25px;
+}
+.button-signin button{
+    height: 40px;
+    width: 90px;
+    border-radius: 5px;
 }
 
 /* ----------------CGU-----------------*/
@@ -222,9 +297,6 @@ body{
     
 }
 .container-cgu h2{
-    font-size: 35px;
-    color: #804927;
-    text-align: center;
     padding-top: 90px;
     padding-bottom: 50px;
 }
@@ -242,11 +314,8 @@ body{
     margin: auto;
 }
 .container-about h2{
-    color: #c75914;
-    font-size: 30px;
     padding-top: 100px;
     padding-bottom: 40px;
-    text-align: center;
 }
 .about-bloc{
     background-color: #ffffff;

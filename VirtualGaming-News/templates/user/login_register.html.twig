@@ -5,21 +5,29 @@
 
 {% block body %}
     <div class="container-log">
+    {# bootstrap #}
+        <form class="toptop">
+    
+            <h2 class="">Connexion</h2>
 
-
-        <div class="bloc-login">
-
-            <h2>Connexion</h2>
-
-            <div class="form-login">
-
-                {# {{brest0ou}}
-
-                {{monMotDePasse}} #}
-
+            <div class="mb-3 mailsign">
+                <p>Email :</p>
+                <input type="email" class="form-control" placeholder="name@example.com">
             </div>
-        </div>
+            <div class="mb-3 mailsign">
+                <p>Mot De Passe :</p>
+                <input type="password" class="form-control" placeholder="Password">
+            </div>
+
+            <div class="checkbox mb-3">
+                <input type="checkbox" value="remember-me"> Se souvenir
+            </div>
+            <div class="mb-3 button-signin">
+            <button class="button" type="submit">Connexion</button>
+            </div>
+        </form>
         
+        <hr>
         
         <div class="bloc-signup" >
             
