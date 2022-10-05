@@ -5,11 +5,11 @@ namespace App\Controller;
 
 use App\Entity\Game;
 use App\Entity\Post;
-use App\Repository\GameRepository;
-use App\Repository\CategoryRepository;
-use App\Services\imageUploader;
 use App\Form\GameRegisterType;
 use App\Form\PostRegisterType;
+use App\Services\imageUploader;
+use App\Repository\GameRepository;
+use App\Repository\CategoryRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -37,12 +37,13 @@ class GameController extends AbstractController
     }
     
     #[Route('/library', name: 'library')]
-    public function library(CategoryRepository $categoryRepository): Response
+    public function library(GameRepository $gameRepository, CategoryRepository $categoryRepository,): Response
     {
         //$category = $categoryRepository->findBy(array('id' => [0,1,2,3,4,5,6,7,8]));
+        $game = $gameRepository->findBy([],['name' => 'ASC']);
         $category = $categoryRepository->findBy([],['name' => 'ASC']);
         
-        return $this->render('game/library.html.twig',['category' => $category,]);
+        return $this->render('game/library.html.twig',['category' => $category, 'game' => $game]);
     }
 
 

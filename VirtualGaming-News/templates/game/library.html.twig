@@ -26,74 +26,22 @@
 
         {# + boucle pour afficher tout les jeux qui existe ligne par ligne #}
         {# afficher les information sur le jeux #}
+        {% for  game in game %}
         <div class="card-game">
 
-            <img src="{{ asset('asset/images/cool.jpg' ) }}" alt="">
+            <img src="{{ asset('images/' ~ game.Picture ) }}" alt="{{game.name}}">
+                
+           
 
             <div class="game-card-info">
-                <p>Nom Du Jeux :</p>
-                <span>Prix :</span>
+                <p>Nom Du Jeux :{{game.name}}</p>
+                <span>Prix : {{game.price}}</span>
             </div>
-            
-            <a href="#" >Dévellopeur</a>
+            <a href="#" >{{game.users}}</a>
 
         </div>
+        {% endfor %}
        {# boucle tout les jeux en card #}
-        <div class="card-game">
-            <img src="#" alt="">
-            <p>text</p>
-        </div>
-
-        <div class="card-game">
-            <img src="#" alt="">
-            <p>text</p>
-        </div>
-
-        <div class="card-game">
-            <img src="#" alt="">
-            <p>text</p>
-        </div>
-
-        <div class="card-game">
-            <img src="#" alt="">
-            <p>text</p>
-        </div>
-
-        <div class="card-game">
-            <img src="#" alt="">
-            <p>text</p>
-        </div>
-
-        <div class="card-game">
-            <img src="#" alt="">
-            <p>text</p>
-        </div>
-
-        <div class="card-game">
-            <img src="#" alt="">
-            <p>text</p>
-        </div>
-
-        <div class="card-game">
-            <img src="#" alt="">
-            <p>text</p>
-        </div>
-
-        <div class="card-game">
-            <img src="#" alt="">
-            <p>text</p>
-        </div>
-
-        <div class="card-game">
-            <img src="#" alt="">
-            <p>text</p>
-        </div>
-        
-        <div class="card-game">
-            <img src="#" alt="">
-            <p>text</p>
-        </div>
-
     </div>
 
 </main>

@@ -21,10 +21,7 @@ class UserController extends AbstractController
 //  pour s'aider voir le cours ludoteck du pro pour la parti login/register/lougout = usercontroller.php
     
     #[Route('/login-register', name: 'login_register')]
-    public function login(
-        Request $request,
-        UserRepository $userRepository
-    ): Response {
+    public function login(Request $request, UserRepository $userRepository): Response {
 
         $user = new User();
         $form = $this->createForm(UserRegisterType::class, $user);
