@@ -1,4 +1,5 @@
 {% extends 'base.html.twig' %}
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
 
 {% block title %}Jeu - {{ parent() }}{% endblock %}
 
@@ -15,7 +16,7 @@
         <!-- La carte d'information utilisateur -->
         <div class="bloc-middle">
             <img src="#" alt="#">
-            {{category.gamesCategory}}
+            {{category.name}}
             
         </div>
             <h4></h4>
@@ -25,7 +26,8 @@
                 <div class="description-game">
                     <div class="price">
                         <p>{{game.price}}</p>
-                        <p>{{game.picture}}</p>
+                        {# link une images #}
+                        <img src="{{ asset('images/' ~ game.picture) }}"/>
                     </div>
                     <p> {{game.description}}</p>
                 </div>

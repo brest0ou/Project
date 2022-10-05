@@ -1,7 +1,7 @@
 body{
-    background-color: #323b61;
+    background-color: #2f354e;
 }
-/* Header --------------------------- */
+/* -----------------Header ----------------- */
 
 .nav-top{
 
@@ -55,7 +55,7 @@ body{
     padding-left: 10px;
 }
 
-/* nav vertical --------------*/
+/* ----------nav vertical --------*/
 
 .nav-vertical-left {
     position: fixed;
@@ -79,6 +79,7 @@ body{
 }
 
 /* ---------------------------------- container-------------------------------------------- */
+
 /* --------------index---------------- */
 
 .container-index{
@@ -103,12 +104,53 @@ body{
 /* ------------------------- */
 
 
+/*---------------game/post--------------*/
+
+
+
+/*---------------perso--------------*/
+
+
+
+/*---------------library--------------*/
+
+.container-library{
+    margin: auto;
+    padding-top: 100px;
+    width: 1000px;
+    color: white;
+}
+.container-library h2{
+    text-align: center;
+    font-size: 30px;
+    color: #c75914;
+    margin: 20px;
+}
+.filter-game button{
+    height: 27px;
+    width: 65px;
+    border-radius: 5px;
+}
+.grid-library{
+    /* background-color: #cdcdcd; */
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+.card-game{
+    margin: 50px auto;
+    background-color: #c2c1c1;
+    height: 370px;
+    width: 290px;
+    border-radius: 8px;
+    display: block;
+}
+
 /* --------------download------------- */
 
 .container-download{
     margin: auto;
     padding-top: 100px;
-    height: 1300px;
     width: 800px;
     color: white;
 }
@@ -127,7 +169,9 @@ body{
     width: 90px;
     border-radius: 5px;
 }
+
 /* -----------log-in/register--------*/
+
 .container-log{
     margin: 0 auto;
     width: 800px;
@@ -196,7 +240,8 @@ body{
 /*---------------------------------------footer---------------------------------------*/ 
 
 footer{
-    
+
+    /* position: fixed; */
     display: block;
     justify-content: space-around;
     bottom: 0;

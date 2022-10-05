@@ -35,7 +35,8 @@ class GameRegisterType extends AbstractType
                 'label' => "Description du jeux"
             ])
             ->add('develop', FileType::class,[
-                'label' => 'Fichier :'
+                'label' => 'Fichier :',
+                'block_name' => 'file'
             ])
             ->add('status', ChoiceType::class,[
                 'label' => 'Stade de dévellopement du jeux :',
