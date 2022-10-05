@@ -1,11 +1,12 @@
 {% extends 'base.html.twig' %}
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
 
 {% block title %}Téléchargement - {{ parent() }}{% endblock %}
 
 {% block body %}
-    <main class="container_download" style="margin-top:100px; margin-bottom:100px; color: white; text-align:center;">
+    <main class="container-download" >
     
-        <h1>Ajouter un jeu</h1>
+        <h2>Ajouter un jeu</h2>
 
         {{ form_start(form) }}
 

@@ -1,5 +1,5 @@
 body{
-    background-color: #1a1c24;
+    background-color: #323b61;
 }
 /* Header --------------------------- */
 
@@ -84,6 +84,7 @@ body{
 .container-index{
     margin:  auto;
     max-width: 70%;
+    color: white;
 }
 .info-homepage{
     margin-top: 100px;
@@ -100,6 +101,50 @@ body{
 }
 
 /* ------------------------- */
+
+
+/* --------------download------------- */
+
+.container-download{
+    margin: auto;
+    padding-top: 100px;
+    height: 1300px;
+    width: 800px;
+    color: white;
+}
+.container-download h2{
+    text-align: center;
+    font-size: 30px;
+    color: #c75914;
+    margin: 20px;
+}
+.form-end{
+    margin: 40px;
+    text-align: center;
+}
+.form-end button{
+    height: 40px;
+    width: 90px;
+    border-radius: 5px;
+}
+/* -----------log-in/register--------*/
+.container-log{
+    margin: 0 auto;
+    width: 800px;
+    color: white;
+}
+.bloc-login{
+    padding: 20px;
+}
+.bloc-signup{
+    padding: 20px;
+}
+.bloc-signup h2{
+    text-align: center;
+    color: #c75914;
+    font-size: 30px;
+    margin: 25px;
+}
 
 /* ----------------CGU-----------------*/
 
