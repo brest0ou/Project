@@ -10,6 +10,7 @@ use App\Repository\CategoryRepository;
 use App\Services\imageUploader;
 use App\Form\GameRegisterType;
 use App\Form\PostRegisterType;
+use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
@@ -36,11 +37,12 @@ class GameController extends AbstractController
     }
     
     #[Route('/library', name: 'library')]
-    public function library(CategoryRepository $categoryRepository): Response
+    public function library(CategoryRepository $categoryRepository, GameRepository $gameRepository, UserRepository $user): Response
     {
-        // $category = $categoryRepository->findBy(array('id' => [1,2,3,4,5,6,7,8,9]));
         $category = $categoryRepository->findBy([],['name' => 'ASC']);
-        return $this->render('game/library.html.twig',['category' => $category,]);
+        $games = $gameRepository->findAll();
+        $user = $user->findAll();
+        return $this->render('game/library.html.twig',['category' => $category, 'game' => $games, 'user' => $user]);
     }
 
 

@@ -25,73 +25,24 @@
 
         {# + boucle pour afficher tout les jeux qui existe ligne par ligne #}
         {# afficher les information sur le jeux #}
-        <div class="card-game">
+        {% for game in game %}
+            <div class="card-game">
 
-            <img src="{{ asset('asset/images/cool.jpg' ) }}" alt="">
+                <img src="{{ asset('asset/images/cool.jpg' ) }}" alt="">
 
-            <div class="game-card-info">
-                <p>Nom Du Jeux :</p>
-                <span>Prix :</span>
-            </div>
+                <div class="game-card-info">
+                    <p>Nom Du Jeux :{{game.name}}</p>
+                    <span>Prix : {{game.price}}</span>
+                </div>
+
             
-            <a href="#" >Dévellopeur</a>
-
-        </div>
-       {# boucle tout les jeux en card #}
-        <div class="card-game">
-            <img src="#" alt="">
-            <p>text</p>
-        </div>
-
-        <div class="card-game">
-            <img src="#" alt="">
-            <p>text</p>
-        </div>
-
-        <div class="card-game">
-            <img src="#" alt="">
-            <p>text</p>
-        </div>
-
-        <div class="card-game">
-            <img src="#" alt="">
-            <p>text</p>
-        </div>
-
-        <div class="card-game">
-            <img src="#" alt="">
-            <p>text</p>
-        </div>
-
-        <div class="card-game">
-            <img src="#" alt="">
-            <p>text</p>
-        </div>
-
-        <div class="card-game">
-            <img src="#" alt="">
-            <p>text</p>
-        </div>
-
-        <div class="card-game">
-            <img src="#" alt="">
-            <p>text</p>
-        </div>
-
-        <div class="card-game">
-            <img src="#" alt="">
-            <p>text</p>
-        </div>
-
-        <div class="card-game">
-            <img src="#" alt="">
-            <p>text</p>
-        </div>
+                {# <a href="#" >{{user.username}}</a> #}
         
-        <div class="card-game">
-            <img src="#" alt="">
-            <p>text</p>
-        </div>
+            
+
+            </div>
+        {% endfor %}
+        
 
     </div>
 
