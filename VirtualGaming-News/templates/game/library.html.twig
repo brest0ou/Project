@@ -20,14 +20,24 @@
         <button>valider</button>
     </div>
     
-    <!-- Grille de jeu 3 jeux collun + boucle pour afficher tout les jeux qui existe ligne par ligne-->
+    <!-- Grille de jeu 3 jeux collun -->
     <div class="grid-library">
 
+        {# + boucle pour afficher tout les jeux qui existe ligne par ligne #}
+        {# afficher les information sur le jeux #}
         <div class="card-game">
-            <img src="#" alt="">
-            <p>text</p>
-        </div>
 
+            <img src="{{ asset('asset/images/cool.jpg' ) }}" alt="">
+
+            <div class="game-card-info">
+                <p>Nom Du Jeux :</p>
+                <span>Prix :</span>
+            </div>
+            
+            <a href="#" >Dévellopeur</a>
+
+        </div>
+       {# boucle tout les jeux en card #}
         <div class="card-game">
             <img src="#" alt="">
             <p>text</p>

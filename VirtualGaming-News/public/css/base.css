@@ -101,9 +101,6 @@ body{
     background-color: #ffffff;
 }
 
-/* ------------------------- */
-
-
 /*---------------game/post--------------*/
 
 
@@ -117,7 +114,7 @@ body{
 .container-library{
     margin: auto;
     padding-top: 100px;
-    width: 1000px;
+    width: 1200px;
     color: white;
 }
 .container-library h2{
@@ -125,6 +122,9 @@ body{
     font-size: 30px;
     color: #c75914;
     margin: 20px;
+}
+.filter-game{
+    text-align: center;
 }
 .filter-game button{
     height: 27px;
@@ -139,11 +139,32 @@ body{
 }
 .card-game{
     margin: 50px auto;
-    background-color: #c2c1c1;
-    height: 370px;
-    width: 290px;
+    background-color: #3c3b53;
+    height: 340px;
+    width: 320px;
     border-radius: 8px;
     display: block;
+    font-size: 13px;
+}
+.card-game img{
+    width: 100%;
+    height:300px;
+    border-radius: 5px;
+}
+.game-card-info{
+    display: flex;
+    justify-content: space-between;
+}
+.game-card-info p{
+    padding-left: 5px;
+}
+.game-card-info span{
+    padding-right: 5px;
+
+}
+.card-game a{
+    padding-left: 5px;
+
 }
 
 /* --------------download------------- */
