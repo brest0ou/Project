@@ -2,13 +2,14 @@
 
 namespace App\Controller;
 
+
 use App\Entity\Game;
 use App\Entity\Post;
-use App\Entity\Category;
-use App\Form\GameRegisterType;
-use App\Form\PostRegisterType;
 use App\Repository\GameRepository;
 use App\Repository\CategoryRepository;
+use App\Services\imageUploader;
+use App\Form\GameRegisterType;
+use App\Form\PostRegisterType;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -23,18 +24,15 @@ class GameController extends AbstractController
     }
     
     #[Route('/{id}', name: 'games', requirements: ["id" => "\d+"])]
-    public function game(Game $game ,Category $category, Request $request): Response
+    public function game(Game $game  ,Request $request): Response
     {
         
         $post = new Post();
         $form = $this->createForm(PostRegisterType::class , $post );
-
         $form->handleRequest($request);
         
-        
-        
         return $this->render('game/game.html.twig', [
-            'game' => $game, 'category' => $category, 'form' => $form->createView(),
+            'game' => $game , 'category' => $game->getGamesCategory()[0],  'form' => $form->createView(),
         ]);
     }
     
@@ -49,18 +47,27 @@ class GameController extends AbstractController
 
 
     #[Route('/download', name: 'download')]
-    public function download(Request $request): Response
+    public function download(Request $request, imageUploader $imageUploader): Response
     {
         
         
         $game= new Game();
         
         $form = $this->createForm(GameRegisterType::class, $game);
-        
+
+
+
         $form->handleRequest($request);
         
         if($form->isSubmitted() && $form->isValid())
         {
+            // controller pour les images
+            $file = $form->get('picture')->getData();
+            if ($file) {
+                $FileName = $imageUploader->upload($file);
+                $game->setPicture($FileName);
+            }
+
             $this->gameRepository->add($game, true);
             
             return $this->redirectToRoute('game_games', [

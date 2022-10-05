@@ -1,10 +1,15 @@
 {% extends 'base.html.twig' %}
 
+
 {% block title %}Library - {{ parent() }}{% endblock %}
 
 {% block body %}
-    <h1>Librairie</h1>
-    <div class="filter-game" style="margin-top: 100px; text-align:center; color:white;">
+<main class="container-library">
+
+    <h2>Librairie</h2>
+    {# Filtre les jeux par catégorie *9 #}
+
+    <div class="filter-game" >
         <label for="">Filtre par type de jeu</label>
         <select name="game-select" id="game-select">
             
@@ -16,12 +21,81 @@
         <button>valider</button>
     </div>
     
-    <!-- Grille de jeu -->
-    <div class="grid-library-game">
+    <!-- Grille de jeu 3 jeux collun -->
+    <div class="grid-library">
+
+        {# + boucle pour afficher tout les jeux qui existe ligne par ligne #}
+        {# afficher les information sur le jeux #}
+        <div class="card-game">
+
+            <img src="{{ asset('asset/images/cool.jpg' ) }}" alt="">
+
+            <div class="game-card-info">
+                <p>Nom Du Jeux :</p>
+                <span>Prix :</span>
+            </div>
+            
+            <a href="#" >Dévellopeur</a>
+
+        </div>
+       {# boucle tout les jeux en card #}
         <div class="card-game">
             <img src="#" alt="">
             <p>text</p>
         </div>
+
+        <div class="card-game">
+            <img src="#" alt="">
+            <p>text</p>
+        </div>
+
+        <div class="card-game">
+            <img src="#" alt="">
+            <p>text</p>
+        </div>
+
+        <div class="card-game">
+            <img src="#" alt="">
+            <p>text</p>
+        </div>
+
+        <div class="card-game">
+            <img src="#" alt="">
+            <p>text</p>
+        </div>
+
+        <div class="card-game">
+            <img src="#" alt="">
+            <p>text</p>
+        </div>
+
+        <div class="card-game">
+            <img src="#" alt="">
+            <p>text</p>
+        </div>
+
+        <div class="card-game">
+            <img src="#" alt="">
+            <p>text</p>
+        </div>
+
+        <div class="card-game">
+            <img src="#" alt="">
+            <p>text</p>
+        </div>
+
+        <div class="card-game">
+            <img src="#" alt="">
+            <p>text</p>
+        </div>
+        
+        <div class="card-game">
+            <img src="#" alt="">
+            <p>text</p>
+        </div>
+
     </div>
+
+</main>
 {% endblock %}
 

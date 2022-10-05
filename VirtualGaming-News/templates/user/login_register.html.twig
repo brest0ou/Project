@@ -1,20 +1,30 @@
 {% extends 'base.html.twig' %}
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
 
 {% block title %}Connexion - Inscription{{ parent() }}{% endblock %}
 
 {% block body %}
-    <div class="container">
+    <div class="container-log">
+
+
         <div class="bloc-login">
-            <h2>log-in</h2>
+
+            <h2>Connexion</h2>
+
             <div class="form-login">
-                <p>brest0ou</p>
-                <p>monMotDePasse</p>
+
+                {# {{brest0ou}}
+
+                {{monMotDePasse}} #}
+
             </div>
         </div>
         
         
-        <div class="bloc-signup" style="margin-top:100px; margin-bottom:100px; color: white;text-align:center;">
+        <div class="bloc-signup" >
             
+            <h2>Inscription</h2>
+
             {{ form_start(form) }}
 
                 {{ form_row(form.username) }}
