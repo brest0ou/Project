@@ -42,9 +42,18 @@
         </div>
     </div>
    
-     {{form(form)}}
-    <!-- Si on appuye sur le boutton alors le popup du formulaire crée un article apparait-->
-    <button class="btn">poster un article</button>
+    {{form_start(form)}}
+        {{form_row(form.title)}}
+        {{form_row(form.text)}}
+        {{form_row(form.picture)}}
+        {{form_row(form.grades)}}
+        {{form_row(form.status)}}
+        <!-- Si on appuye sur le boutton alors le popup du formulaire crée un article apparait-->
+        <div class="form-end">
+            <button class="button">Poster un poste</button>
+        </div>
+    {{form_end(form)}}
+    
     <div class="form-popup">
         <div class="container-form-popup">
             <!-- ici faut mettre le formulaire-->

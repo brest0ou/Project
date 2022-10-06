@@ -5,52 +5,108 @@
 {% block body %}
 
 <!-- La carte d'information utilisateur -->
-<main style="margin-top: 100px; text-align:center; color:white;">
-    <div class="container-card">
-        <div class="card-perso">
-            <div class="color-top"></div>
-            <div class="circle-img">
-                <img src="{{ asset('images/' ~ user.Picture ) }}" alt="#">
-            </div>
-            <div class="info-perso"></div>
-        </div>
-    </div>
-
-    <div class="description-perso">
-        
-        <p>{{user.username}}</p>
-        <p>{{user.email}}</p>
-        <p>{{user.roles}}</p>
-        <p>looping</p>
-        
-    </div>
-
-    <!-- nos onglet trophée-->
-
-    <div class="container-trophy">
-        <div class="bloc-trophy">
-            <icon>1</icon>
-            <icon>2</icon>
-            <icon>3</icon>
-        </div>
-    </div>
-
-    <!-- Les postes de l'utilisateur -->
-
-    <div class="container-post-perso">
-        <h3>Vos postes</h3>
-        <div class="card-post">
-            <img src="#" alt="#">
-            <div class="info-post">
-                <p>Titre: Zombitors</p>
-                <p>Date: 28/09/2022</p>
-            </div>
-            <div class="icon-post">
-                <icon>j'aime</icon>
-                <icon>commentaire</icon>
+<main class="main-perso">
+    <section class="bloc-section">   
+        <div class="container-card ">
+            <div class="card-perso">
+                <div>
+                    <img class="img-top" src="{{ asset('images/stationeers-633d9efe5a2f4.jpg')}}" alt="#">
+                </div>
+                <div class="circle-img">
+                    <img src="{{ asset('./asset/images/images.jpg') }}" alt="#">
+                    {# <img src="{{ asset('images/' ~ user.Picture ) }}" alt="#"> #}
+                </div>
+                <div class="info-perso wit">
+                    <p>Pseudo: {{user.username}}</p>
+                    <p>Email: {{user.email}}</p>
+                    <p>Pseudo: {{user.lastname}}</p>
+                    <p>Pseudo: {{user.firstname}}</p>
+                </div>
             </div>
         </div>
-    </div>
+        <div class="bloc-desc-post">
+            <div class="bloc-desc wit">
+                <h3>Description</h3>
+                <div class="description-perso wit">
+                    <p>Bonjour! je suis quelqu'un de dynamique j'adore jouer au 
+                        jeux vidéo et j'aime bien les animaux j'aime faire la 3D 
+                        et partager mes réalisation ! et je crée aussi des jeux !</p>
+                </div>
+            </div>
+            
+            <!-- Les postes de l'utilisateur -->
+
+            <div class="container-post-perso wit">
+                <div class="post-h3">
+                    <h3>Vos postes</h3>
+                </div>
+                <div class="card-post-top">
+                    <div class="bloc-img-info">
+                        <img src="{{ asset('images/stationeers-633d9efe5a2f4.jpg')}}" alt="#">
+                        <div class="info-post">
+                            <p class="marg">Titre: Zombitors</p>
+                            <p class="marg">Date: 28/09/2022</p>
+                            <div class="description-post">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate quibusdam magni quas 
+                                 aspernatur dicta ad harum quidem nobis sint perspiciatis,
+                                 aperiam assumenda, ipsa ea sequi cum dolores pariatur praesentium</p>
+                                <a href="">Voir plus</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="icon-post">
+                        <icon>j'aime</icon>
+                        <icon>commentaire</icon>
+                    </div>
+                </div>
+
+                <div class="card-post-bot">
+                    <div class="bloc-img-info">
+                        <img src="{{ asset('images/stationeers-633d9efe5a2f4.jpg')}}" alt="#">
+                        <div class="info-post">
+                            <p class="marg">Titre: Zombitors</p>
+                            <p class="marg">Date: 28/09/2022</p>
+                            <div class="description-post">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate quibusdam magni quas 
+                                 aspernatur dicta ad harum quidem nobis sint perspiciatis,
+                                 aperiam assumenda, ipsa ea sequi cum dolores pariatur praesentium</p>
+                                <a href="">Voir plus</a>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="icon-post">
+                        <p>j'aime</p>
+                        <p>commentaire</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+           <!-- nos onglet trophée-->
+
+        <div class="container-trophy wit">
+            <h3>Trophée</h3>
+            <div class="bloc-trophy">
+            <!-- icon (Font Awesome icon) -->
+                <p>Icon1</p>
+                <p>Icon2</p>
+                <p>Icon3</p>
+                <p>dsdsq</p>
+                <p>qsdsq</p>
+                <p>Icon1</p>
+                <p>Icon2</p>
+                <p>Icon3</p>
+                <p>dsdsq</p>
+                <p>qsdsq</p>
+                <p>Icon1</p>
+                <p>Icon2</p>
+                <p>Icon3</p>
+                <p>dsdsq</p>
+                <p>qsdsq</p>
+            </div>
+        </div>   
+    
+    </section>   
 </main>
 
 {% endblock %}
