@@ -26,11 +26,10 @@ class GameController extends AbstractController
     #[Route('/{id}', name: 'games', requirements: ["id" => "\d+"])]
     public function game(Game $game  ,Request $request): Response
     {
-        
         $post = new Post();
         $form = $this->createForm(PostRegisterType::class , $post );
         $form->handleRequest($request);
-        
+        // if methode render
         return $this->render('game/game.html.twig', [
             'game' => $game , 'category' => $game->getGamesCategory()[0],  'form' => $form->createView(),
         ]);
@@ -39,21 +38,25 @@ class GameController extends AbstractController
     #[Route('/library', name: 'library')]
     public function library(CategoryRepository $categoryRepository, GameRepository $gameRepository): Response
     {
-        $category = $categoryRepository->findBy([],['name' => 'ASC']);
+        $category = $categoryRepository->findAll();
         $games = $gameRepository->findAll();
+        
         return $this->render('game/library.html.twig',['category' => $category, 'game' => $games]);
+
+        
+        // call le meme url avec un nouveau parametre (query)
+        // JS pour le filtre 
     }
 
 
     #[Route('/download', name: 'download')]
     public function download(Request $request, imageUploader $imageUploader): Response
     {
-        
-        
         $game= new Game();
         
         $form = $this->createForm(GameRegisterType::class, $game);
         $form->handleRequest($request);
+
         if($form->isSubmitted() && $form->isValid())
         {
             // controller pour les images

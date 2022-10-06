@@ -42,13 +42,29 @@
         </div>
     </div>
    
-     {{form(form)}}
+    {{ form_start(form) }}
+
+        <div class="form-aligned">
+            {{ form_row(form.title) }}
+            {{ form_row(form.text) }}
+            {{ form_row(form.picture) }}
+            
+        </div>
+
+        <div class="form-end">
+            <button class="button">Ajouter</button>
+        </div>
+        
+    {{ form_end(form)}}
+
     <!-- Si on appuye sur le boutton alors le popup du formulaire crée un article apparait-->
-    <button class="btn">poster un article</button>
+
     <div class="form-popup">
         <div class="container-form-popup">
-            <!-- ici faut mettre le formulaire-->
+            <!-- ici faut mettre le post-->
+            {# {{post.title}} #}
         </div>
     </div>
+
 </main>
 {% endblock %}

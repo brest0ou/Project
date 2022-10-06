@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Post;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -23,15 +24,18 @@ class PostRegisterType extends AbstractType
 
             ->add('picture', FileType::class,)
 
-            // ->add('status')
+            ->add('status')
 
             ->add('grades', NumberType::class,)
 
-            // ->add('createdAt')
+            ->add('createdAt', DateType::class,[
+                'label' => "Date de création",
+                'input' => 'datetime_immutable',
+            ])
 
-            // ->add('posts')
+            ->add('posts')
 
-            // ->add('gamesPosts')
+            ->add('gamesPosts')
         ;
     }
 
