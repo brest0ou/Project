@@ -23,7 +23,7 @@ class PostRegisterType extends AbstractType
 
             ->add('picture', FileType::class,)
 
-            // ->add('status')
+            ->add('status')
 
             ->add('grades', NumberType::class,)
 

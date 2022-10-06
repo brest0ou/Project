@@ -9,6 +9,7 @@ use App\Form\GameRegisterType;
 use App\Form\PostRegisterType;
 use App\Services\imageUploader;
 use App\Repository\GameRepository;
+use App\Repository\PostRepository;
 use App\Repository\CategoryRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -24,13 +25,27 @@ class GameController extends AbstractController
     }
     
     #[Route('/{id}', name: 'games', requirements: ["id" => "\d+"])]
-    public function game(Game $game  ,Request $request): Response
+    public function game(Game $game,PostRepository $postRepository,Request $request): Response
     {
         
         $post = new Post();
         $form = $this->createForm(PostRegisterType::class , $post );
         $form->handleRequest($request);
-        
+
+        if($form->isSubmitted() && $form->isValid())
+        {
+            // controller pour les images
+            // $files = $form->get('picture')->getData();
+            // if ($files) {
+            //     $FileName = $imageUploader->upload($files);
+            //     $post->setPicture($FileName);
+            // }
+
+            $postRepository->add($post, true);
+            
+            return $this->redirectToRoute('game_games');
+        }
+
         return $this->render('game/game.html.twig', [
             'game' => $game , 'category' => $game->getGamesCategory()[0],  'form' => $form->createView(),
         ]);
