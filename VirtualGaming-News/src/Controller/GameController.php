@@ -45,18 +45,28 @@ class GameController extends AbstractController
             
             return $this->redirectToRoute('game_games');
         }
-
+        
         return $this->render('game/game.html.twig', [
             'game' => $game , 'category' => $game->getGamesCategory()[0],  'form' => $form->createView(),
         ]);
     }
     
     #[Route('/library', name: 'library')]
-    public function library(CategoryRepository $categoryRepository, GameRepository $gameRepository): Response
+    public function library(Request $request, CategoryRepository $categoryRepository, GameRepository $gameRepository): Response
     {
         $category = $categoryRepository->findBy([],['name' => 'ASC']);
         $games = $gameRepository->findAll();
-        return $this->render('game/library.html.twig',['category' => $category, 'game' => $games]);
+        $gameCategoryId = $request->get('game-select');
+        
+        
+        if($gameCategoryId) {
+            $category = $categoryRepository->find($gameCategoryId);
+            
+            $games = $category->getCategoryGames();
+            
+        }
+
+        return $this->render('game/library.html.twig',['category' => $category, 'game' => $games,]);
     }
 
 
