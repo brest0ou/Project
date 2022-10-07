@@ -11,32 +11,73 @@
     <div class="best-bloc">
         
         <div class="grid-bg">
+<<<<<<< HEAD
         
             {% for  game in game  %}
                 
+=======
+
+             {% for game in game %} 
+
+>>>>>>> DD
             <div class="card-maxgame">
 
                 {# boucle sur 3 élement du tableau array_rand(tableau) array_rand($tableau, 3) #}
                     {# ~ game.picture / gamepicture truc comme sa#}
-                <img src="{{ asset('/images/') }}" alt="">
+                <img src="{{ asset('/images/' ~ game.picture) }}" alt="">
 
                 <div class="game-card-max">
+<<<<<<< HEAD
                     
                     <p>Nom Du Jeux :{{game.name}}</p>
                    
                     <span>Prix :{{game.price}} </span>
+=======
+                
+                    <p>Nom Du Jeux :{{game.name}}</p>
+                   
+                    <span>Prix :{{game.price}} </span>
+                    
+>>>>>>> DD
                 </div>
             
                 <a href="#" ></a>
             </div>
+<<<<<<< HEAD
+=======
+             {% endfor %} 
+
+           {# <div class="card-maxgame">
+
+                <img src="{{ asset('/images/') }}" alt="">
+
+                <div class="game-card-max">
+                    <p>Nom Du Jeux :</p>
+                    <span>Prix : </span>
+                </div>
+>>>>>>> DD
             
             {% endfor %}
 
+<<<<<<< HEAD
            
             {# test meilleur jeux #}
         </div>
-    </div>
+=======
+                <img src="{{ asset('/images/') }}" alt="">
 
+                <div class="game-card-max">
+                    <p>Nom Du Jeux :</p>
+                    <span>Prix : </span>
+                </div>
+            
+                <a href="#" ></a>
+            </div>
+            {# test meilleur jeux 
+        </div> #}
+>>>>>>> DD
+    </div>
+    
     <h2>Meilleurs Poste</h2>
     <div class="best-bloc">
         

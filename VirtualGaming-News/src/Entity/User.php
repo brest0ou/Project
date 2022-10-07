@@ -111,6 +111,9 @@ class User
         return $this;
     }
 
+    
+    
+
     public function getLastname(): ?string
     {
         return $this->lastname;

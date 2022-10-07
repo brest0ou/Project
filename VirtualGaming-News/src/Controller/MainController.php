@@ -12,17 +12,23 @@ use Symfony\Component\Routing\Annotation\Route;
 class MainController extends AbstractController
 {
     #[Route('/', name: 'index')]
-    public function index(CategoryRepository $categoryRepository, GameRepository $gameRepository,PostRepository $postRepository): Response
+    public function index(GameRepository $gamesRepository): Response
     {
         // recupérer tout mes jeux *array rand tableau
-        $category = $categoryRepository->findAll();
-        $games = $gameRepository->findAll();
-        $post = $postRepository->findAll();
-        
-        return $this->render('main/index.html.twig',[
-            
-            'category' => $category, 'game' => $games, 'post' => $post]);
+        $max = 3;
+        $game = $gamesRepository->findAll();
 
+        $arrayGame = [];
+    
+        for ($i = 0; $i < $max ; $i++)
+        {
+            $games = $game[array_rand($game)];
+            
+            array_push($arrayGame, $games);
+            
+        };
+        
+        return $this->render('main/index.html.twig', ['game' => $arrayGame]);
     }
 
     #[Route('/cgu', name: 'cgu')]
