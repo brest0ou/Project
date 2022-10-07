@@ -537,8 +537,8 @@ hr:not([size]) {
 .bloc img{
     height: 100%;
     width: 40%;
-    border-bottom-left-radius:  15px;
-    border-top-left-radius: 15px ;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
 }
 
 /*---------------------------------------footer---------------------------------------*/ 

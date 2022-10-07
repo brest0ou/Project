@@ -16,16 +16,24 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class PostRepository extends ServiceEntityRepository
 {
-    public function __construct(ManagerRegistry $registry)
+    public function __construct(ManagerRegistry $registry, private GameRepository $gameRepository)
     {
         parent::__construct($registry, Post::class);
     }
 
-    public function add(Post $entity, bool $flush = false): void
+    public function add(Post $entity, int $gameId, bool $flush = false ): void
     {
-        $this->getEntityManager()->persist($entity);
+        $game = $this->gameRepository->findOneBy(['id'=>$gameId]);
 
+        if (isset($game)) {
+
+            $entity->setGamesPosts($game);
+
+            $this->getEntityManager()->persist($entity);
+            
+        }
         if ($flush) {
+
             $this->getEntityManager()->flush();
         }
     }

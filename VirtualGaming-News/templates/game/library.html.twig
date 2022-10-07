@@ -15,7 +15,9 @@
             
             <option value="0">Tout</option>
             {% for category in category %}
+                
                 <option value="{{category.id}}">{{category.name}}</option>
+            
             {% endfor %}
         </select>
         <button>valider</button>
@@ -42,4 +44,5 @@
     </div>
 </main>
 {% endblock %}
+{# JS #}
 

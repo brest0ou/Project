@@ -42,22 +42,35 @@
         </div>
     </div>
    
-    {{form_start(form)}}
-        {{form_row(form.title)}}
-        {{form_row(form.text)}}
-        {{form_row(form.picture)}}
-        {{form_row(form.grades)}}
-        {{form_row(form.status)}}
-        <!-- Si on appuye sur le boutton alors le popup du formulaire crée un article apparait-->
-        <div class="form-end">
-            <button class="button">Poster un poste</button>
+    {{ form_start(form) }}
+
+        <div class="form-aligned">
+            {{ form_row(form.title) }}
+            {{ form_row(form.text) }}
+            {{ form_row(form.picture) }}
+            
         </div>
-    {{form_end(form)}}
-    
+
+        <div class="form-end">
+            <button class="button">Ajouter</button>
+        </div>
+        
+    {{ form_end(form)}}
+
+    <!-- Si on appuye sur le boutton alors le popup du formulaire crée un article apparait-->
+
     <div class="form-popup">
         <div class="container-form-popup">
-            <!-- ici faut mettre le formulaire-->
+        {% for post in post %}
+
+            {{post.picture}}
+            {{post.title}}
+            {{post.text}}
+            
+        {% endfor %}
+            <!-- ici faut mettre le post-->
         </div>
     </div>
+
 </main>
 {% endblock %}

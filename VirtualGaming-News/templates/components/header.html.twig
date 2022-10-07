@@ -9,7 +9,10 @@
                 <a href="{{path('game_library')}}" class="library hover">Store</a>
 
                 <form role="search" class="search_game">
-                    <input type="search" class="game_search" placeholder="  Rechercher un jeux" aria-label="Search">
+                {# récupérer la valeur de l'input JS pour afficher la page de l'élement #}
+
+                {# controller parametre de jeux  et renvoie et modifie  #}
+                    <input type="search" class="game_search" id="search" placeholder="  Rechercher un jeux" aria-label="Search">
                 </form>    
 
                 <a href="{{path('main_cgu')}}" class="cgu_link"> CGU</a>

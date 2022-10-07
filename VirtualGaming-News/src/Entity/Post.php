@@ -25,24 +25,24 @@ class Post
     #[ORM\Column(length: 255)]
     private ?string $picture = null;
 
-    #[ORM\Column(length: 50)]
+    #[ORM\Column(length: 50, nullable:true)]
     private ?string $status = null;
 
-    #[ORM\Column]
+    #[ORM\Column(nullable:true)]
     private ?int $grades = null;
 
-    #[ORM\Column]
+    #[ORM\Column(nullable:true)]
     private ?\DateTimeImmutable $createdAt = null;
 
     #[ORM\ManyToOne(inversedBy: 'posts')]
-    #[ORM\JoinColumn(nullable: false)]
+    #[ORM\JoinColumn(nullable: true)]
     private ?User $posts = null;
 
     #[ORM\OneToMany(mappedBy: 'commentsPosts', targetEntity: Comment::class)]
     private Collection $postsComments;
 
     #[ORM\ManyToOne(inversedBy: 'postsGames')]
-    #[ORM\JoinColumn(nullable: false)]
+    #[ORM\JoinColumn(nullable: true)]
     private ?Game $gamesPosts = null;
 
     public function __construct()

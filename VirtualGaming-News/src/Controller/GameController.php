@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-
 use App\Entity\Game;
 use App\Entity\Post;
 use App\Form\GameRegisterType;
@@ -19,56 +18,64 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 #[Route('/game', name:'game_')]
 class GameController extends AbstractController
 {
-    public function __construct(private GameRepository $gameRepository, CategoryRepository $categoryRepository)
+    public function __construct(private GameRepository $gameRepository, )
     {
         
     }
     
     #[Route('/{id}', name: 'games', requirements: ["id" => "\d+"])]
-    public function game(Game $game,PostRepository $postRepository,Request $request): Response
+    public function game(Game $game  ,Request $request, PostRepository $PostRepository,imageUploader $imageUploader): Response
     {
-        
         $post = new Post();
+
         $form = $this->createForm(PostRegisterType::class , $post );
         $form->handleRequest($request);
-
-        if($form->isSubmitted() && $form->isValid())
+        // if methode render
+        if ($form->isSubmitted() && $form->isValid()) 
         {
-            // controller pour les images
-            // $files = $form->get('picture')->getData();
-            // if ($files) {
-            //     $FileName = $imageUploader->upload($files);
-            //     $post->setPicture($FileName);
-            // }
+            //  controller pour les images
 
-            $postRepository->add($post, true);
+             $files = $form->get('picture')->getData();
+             if ($files) {
+                 $FileName = $imageUploader->upload($files);
+                 $game->setPicture($FileName);
+             }
+
+            // créer des post et les affiché sur la page qui concerne le jeux
+
+             $PostRepository->add($post, $game->getId(), true);
             
-            return $this->redirectToRoute('game_games');
         }
-
+        $posts = $PostRepository->findBy([ 'gamesPosts' => $game]); //->getId()
+        
         return $this->render('game/game.html.twig', [
-            'game' => $game , 'category' => $game->getGamesCategory()[0],  'form' => $form->createView(),
+            'game' => $game , 'category' => $game->getGamesCategory()[0],  'form' => $form->createView(), 'post' => $posts,
         ]);
+        
     }
     
     #[Route('/library', name: 'library')]
     public function library(CategoryRepository $categoryRepository, GameRepository $gameRepository): Response
     {
-        $category = $categoryRepository->findBy([],['name' => 'ASC']);
+        $category = $categoryRepository->findAll();
         $games = $gameRepository->findAll();
+        
         return $this->render('game/library.html.twig',['category' => $category, 'game' => $games]);
+        
+            // diogo category
+
+
     }
 
 
     #[Route('/download', name: 'download')]
     public function download(Request $request, imageUploader $imageUploader): Response
     {
-        
-        
         $game= new Game();
         
         $form = $this->createForm(GameRegisterType::class, $game);
         $form->handleRequest($request);
+
         if($form->isSubmitted() && $form->isValid())
         {
             // controller pour les images
