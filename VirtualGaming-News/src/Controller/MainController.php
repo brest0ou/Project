@@ -12,6 +12,8 @@ class MainController extends AbstractController
     #[Route('/', name: 'index')]
     public function index(): Response
     {
+        // recupérer tout mes jeux *array rand tableau
+        
         return $this->render('main/index.html.twig');
     }
     #[Route('/cgu', name: 'cgu')]

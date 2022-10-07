@@ -24,18 +24,18 @@ class PostRegisterType extends AbstractType
 
             ->add('picture', FileType::class,)
 
-            ->add('status')
+            // ->add('status')
 
-            ->add('grades', NumberType::class,)
+            // ->add('grades', NumberType::class,)
 
-            ->add('createdAt', DateType::class,[
-                'label' => "Date de création",
-                'input' => 'datetime_immutable',
-            ])
+            // ->add('createdAt', DateType::class,[
+            //     'label' => "Date de création",
+            //     'input' => 'datetime_immutable',
+            // ])
 
-            ->add('posts')
+            // ->add('posts')
 
-            ->add('gamesPosts')
+            // ->add('gamesPosts')
         ;
     }
 

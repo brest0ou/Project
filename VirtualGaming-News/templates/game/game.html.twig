@@ -61,8 +61,14 @@
 
     <div class="form-popup">
         <div class="container-form-popup">
+        {% for post in post %}
+
+            {{post.picture}}
+            {{post.title}}
+            {{post.text}}
+            
+        {% endfor %}
             <!-- ici faut mettre le post-->
-            {# {{post.title}} #}
         </div>
     </div>
 
