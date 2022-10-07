@@ -5,7 +5,7 @@
 {% block body %}
 <main class="container-index">
     <div class="info-homepage">
-        <p>VirtualGaming New est une plateforme de mise a disposition de jeux Crée par des dévellopeurs pour tous les utilisateurs</p>
+        <p>VirtualGaming News est une plateforme de mise a disposition de jeux Crée par des dévellopeurs pour tous les utilisateurs</p>
     </div>
     <h2>Meilleurs Jeux</h2>
     <div class="best-bloc">
@@ -32,28 +32,7 @@
             
             {% endfor %}
 
-           <div class="card-maxgame">
-
-                <img src="{{ asset('/images/') }}" alt="">
-
-                <div class="game-card-max">
-                    <p>Nom Du Jeux :</p>
-                    <span>Prix : </span>
-                </div>
-            
-                <a href="#" ></a>
-            </div>
-            <div class="card-maxgame">
-
-                <img src="{{ asset('/images/') }}" alt="">
-
-                <div class="game-card-max">
-                    <p>Nom Du Jeux :</p>
-                    <span>Prix : </span>
-                </div>
-            
-                <a href="#" ></a>
-            </div>
+           
             {# test meilleur jeux #}
         </div>
     </div>
@@ -68,7 +47,7 @@
 
                 {# boucle sur 3 élement du tableau array_rand(tableau) array_rand($tableau, 3) #}
                     {# ~ game.picture / gamepicture truc comme sa#}
-                <img src="{{ asset('/images/') }}" alt="">
+                <a href="#"><img src="{{ asset('/images/') }}" alt=""></a>
 
                 <div class="game-card-min">
                 {# game.name #}
@@ -81,29 +60,7 @@
             </div>
             {# {% endfor %} #}
 
-            <div class="card-mingame">
-
-                <img src="{{ asset('/images/') }}" alt="">
-
-                <div class="game-card-max">
-                    <p>Nom Du Jeux :</p>
-                    <span>Prix : </span>
-                </div>
             
-                <a href="#" ></a>
-            </div>
-
-            <div class="card-mingame">
-
-                <img src="{{ asset('/images/') }}" alt="">
-
-                <div class="game-card-min">
-                    <p>Nom Du Jeux :</p>
-                    <span>Prix : </span>
-                </div>
-            
-                <a href="#" ></a>
-            </div>
             {# affiché 3 post avec une bonne note #}
         </div>
     </div>

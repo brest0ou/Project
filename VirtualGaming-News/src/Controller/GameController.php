@@ -38,7 +38,7 @@ class GameController extends AbstractController
              $files = $form->get('picture')->getData();
              if ($files) {
                  $FileName = $imageUploader->upload($files);
-                 $game->setPicture($FileName);
+                 $post->setPicture($FileName);
              }
 
             // créer des post et les affiché sur la page qui concerne le jeux
@@ -63,6 +63,7 @@ class GameController extends AbstractController
         
         
         if($gameCategoryId) {
+            
             $category = $categoryRepository->find($gameCategoryId);
             
             $games = $category->getCategoryGames();

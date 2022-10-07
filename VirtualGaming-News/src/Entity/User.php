@@ -36,7 +36,7 @@ class User
     #[ORM\Column]
     private ?bool $isEnable = true;
 
-    #[ORM\Column]
+    #[ORM\Column(nullable: true)]
     private ?\DateTimeImmutable $createdAt = null;
 
     #[ORM\OneToMany(mappedBy: 'users', targetEntity: Game::class)]

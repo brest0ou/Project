@@ -31,7 +31,7 @@
         {# afficher les information sur le jeux #}
        
         {% for game in game %}
-            <div class="card-game">
+            <a href="#" class="card-game">
            
                 <img src="{{ asset('/images/' ~ game.picture ) }}" alt="{{ game.name }}">
 
@@ -42,7 +42,7 @@
             
                 <a href="#" >{{game.Users}}</a>
                 
-            </div>
+            </a>
         {% endfor %}
         
     </div>

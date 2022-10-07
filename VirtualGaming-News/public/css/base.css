@@ -1,5 +1,5 @@
 body{
-    background-color: #2f354e;
+    background-color: #1b1e2b;
 }
 h2{
     color: #ce611d;
@@ -19,7 +19,7 @@ hr:not([size]) {
 
 .nav-top{
 
-    background: #2b2b2b;
+    background: #252424;
     position: fixed;
     z-index: 100;
     top: 0;
@@ -31,24 +31,32 @@ hr:not([size]) {
     height: 55px;
     align-items: center;
     
+    
+}
+.nav-top a{
+    font-family: 'Gemunu Libre', sans-serif;
+    
 }
 /* hover sur le logo et le store car il est un lien de redirection a la page d'accueil  */
 .logo{
     padding-left: 10px;  
     color: white;
-    font-size: 26px;
+    font-size: 35px;
+
 }
 .divNav{
     display: flex;
     justify-content: space-between;
     width: 440px;
     align-items: center;
-    
+}
+.divNav a{
+    font-size: 26px;
 }
 .library{
 
     color: #c75914;
-    font-size: 22px;
+   
     height: auto;
     width: auto;
 }
@@ -67,6 +75,9 @@ hr:not([size]) {
     color: #c75914;
     padding-right: 10px;
     padding-left: 10px;
+}
+.log a{
+    font-size: 26px;
 }
 
 /* ----------nav vertical --------*/
@@ -106,7 +117,7 @@ hr:not([size]) {
     padding: 20px;
     color: #ffffff;
     font-size: 24px;
-    background-color:#222222;
+    background-color:#342424;
     border-radius: 20px;
 }
 .best-bloc {
