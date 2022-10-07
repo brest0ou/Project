@@ -1,10 +1,13 @@
 body{
-    background-color: #1b1e2b;
+    background-color: #121836;
+    
 }
 h2{
-    color: #ce611d;
-    font-size: 30px;
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: 700;
     text-align: center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin: 20px;
 }
 hr{
@@ -108,8 +111,10 @@ hr:not([size]) {
 /* --------------index---------------- */
 
 .container-index{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin:  auto;
     max-width: 70%;
+    height: 1200px;
     color: white;
 }
 .info-homepage{
@@ -458,25 +463,38 @@ hr:not([size]) {
     padding-top: 100px;
     width: 1200px;
     color: white;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.container-library h2{
+    padding-top: 30px;
+    padding-bottom: 50px;
 }
 .filter-game{
     text-align: center;
+   
+}
+.filter-game label{
+    padding-bottom: 10px;
+    font-size: 15px;
 }
 .filter-game button{
     height: 27px;
     width: 65px;
     border-radius: 5px;
+    
 }
 .grid-library{
     /* background-color: #cdcdcd; */
     height: 100%;
+    margin-top: 50px;
+    margin-bottom: 50px;
     display: grid;
     grid-template-columns: repeat(3,1fr);
 }
 .card-game{
     margin: 50px auto;
     background-color: #3c3b53;
-    height: 340px;
+    height: 330px;
     width: 320px;
     border-radius: 8px;
     display: block;
@@ -508,8 +526,9 @@ hr:not([size]) {
 .container-download{
     margin: auto;
     padding-top: 100px;
-    width: 800px;
+    width: 400px;
     color: white;
+    
 }
 .form-end{
     margin: 40px;
@@ -525,7 +544,7 @@ hr:not([size]) {
 
 .container-log{
     margin: 0 auto;
-    width: 500px;
+    width: 420px;
     color: white;
 }
 .toptop{
@@ -562,13 +581,19 @@ hr:not([size]) {
 .container-cgu h2{
     padding-top: 90px;
     padding-bottom: 50px;
+    font-weight: 900;
 }
 .bloc-vig{
-    letter-spacing: normal;
+    letter-spacing:2px;
     margin: auto;
     padding: 20px;
-    width: 900px;
+    width: 700px;
     color: white;
+}
+.bloc-vig h3{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: 900;
 }
 
 /*----------------about---------------*/
@@ -579,7 +604,7 @@ hr:not([size]) {
     padding-bottom: 40px;
 }
 .about-bloc{
-    background-color: #818080;
+    background-color: #353a5f;
     margin: 0 auto;
     margin-top: 80px;
     margin-bottom: 80px;
@@ -592,13 +617,13 @@ hr:not([size]) {
 }
 .about_contain{
     margin: auto;
-    background-color: #212128;
+    background-color: #37374d;
     width: 490px;
     height: 260px;
     border-radius: 15px;
 }
 .about_contain p{
-    margin: 80px 20px 0px 20px;
+    margin: 80px 50px 0px 50px;
     text-align: center;
     color: #ffffff;
 }
