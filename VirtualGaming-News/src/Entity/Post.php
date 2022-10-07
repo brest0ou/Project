@@ -25,7 +25,7 @@ class Post
     #[ORM\Column(length: 255)]
     private ?string $picture = null;
 
-    #[ORM\Column(length: 50, nullable:true)]
+    #[ORM\Column(nullable:true)]
     private ?string $status = null;
 
     #[ORM\Column(nullable:true)]

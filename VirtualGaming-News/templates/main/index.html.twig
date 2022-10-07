@@ -12,26 +12,27 @@
         
         <div class="grid-bg">
 
-            {# {% for game in game %} #}
+             {% for game in game %} 
 
             <div class="card-maxgame">
 
                 {# boucle sur 3 élement du tableau array_rand(tableau) array_rand($tableau, 3) #}
                     {# ~ game.picture / gamepicture truc comme sa#}
-                <img src="{{ asset('/images/') }}" alt="">
+                <img src="{{ asset('/images/' ~ game.picture) }}" alt="">
 
                 <div class="game-card-max">
-                {# game.name #}
-                    <p>Nom Du Jeux :</p>
-                    {# game.price #}
-                    <span>Prix : </span>
+                
+                    <p>Nom Du Jeux :{{game.name}}</p>
+                   
+                    <span>Prix :{{game.price}} </span>
+                    
                 </div>
             
                 <a href="#" ></a>
             </div>
-            {# {% endfor %} #}
+             {% endfor %} 
 
-           <div class="card-maxgame">
+           {# <div class="card-maxgame">
 
                 <img src="{{ asset('/images/') }}" alt="">
 
@@ -53,10 +54,10 @@
             
                 <a href="#" ></a>
             </div>
-            {# test meilleur jeux #}
-        </div>
+            {# test meilleur jeux 
+        </div> #}
     </div>
-
+    
     <h2>Meilleurs Poste</h2>
     <div class="best-bloc">
         

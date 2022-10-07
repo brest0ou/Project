@@ -48,11 +48,11 @@ class UserRegisterType extends AbstractType
                  'Visiteur' => "Visiteur",
                 ]
             ])
-            ->add('createdat', DateType::class, array(
-                'label' => 'Date de création du compte',
-                'data' => new \DateTime(),
+            // ->add('createdat', DateType::class, array(
+            //     'label' => 'Date de création du compte',
+            //     'data' => new \DateTime(),
                 
-            ))
+            // ))
         ;
     }
 

@@ -27,7 +27,7 @@ class UserController extends AbstractController
         UserRepository $userRepository,
         imageUploader $imageUploader,
     ): Response {
-
+        
 
         $user = new User();
         $form = $this->createForm(UserRegisterType::class, $user);

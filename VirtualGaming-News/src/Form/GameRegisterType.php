@@ -50,10 +50,10 @@ class GameRegisterType extends AbstractType
                 'label' => "Date de création",
                 'input' => 'datetime_immutable',
             ))
-            ->add('updateat',DateType::class,  array(
-                'label' => "Date de Prochaine mise à jour",
-                'input' => 'datetime_immutable',
-            ))
+            // ->add('updateat',DateType::class,  array(
+            //     'label' => "Date de Prochaine mise à jour",
+            //     'input' => 'datetime_immutable',
+            // ))
             ->add('gamesCategory',null,[
                 'label' => 'Catégorie du jeu',
             ])
