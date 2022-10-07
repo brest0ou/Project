@@ -55,16 +55,21 @@ class GameController extends AbstractController
     }
     
     #[Route('/library', name: 'library')]
-    public function library(CategoryRepository $categoryRepository, GameRepository $gameRepository): Response
+    public function library(Request $request, CategoryRepository $categoryRepository, GameRepository $gameRepository): Response
     {
         $category = $categoryRepository->findAll();
         $games = $gameRepository->findAll();
+        $gameCategoryId = $request->get('game-select');
         
-        return $this->render('game/library.html.twig',['category' => $category, 'game' => $games]);
         
-            // diogo category
+        if($gameCategoryId) {
+            $category = $categoryRepository->find($gameCategoryId);
+            
+            $games = $category->getCategoryGames();
+            
+        }
 
-
+        return $this->render('game/library.html.twig',['category' => $category, 'game' => $games,]);
     }
 
 

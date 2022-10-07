@@ -7,30 +7,32 @@
 <main class="container-library">
 
     <h2>Librairie</h2>
+    
     {# Filtre les jeux par catégorie *9 #}
-
     <div class="filter-game" >
         <label for="">Filtre par type de jeu</label>
-        <select name="game-select" id="game-select">
-            
+        <form method="GET">
+            <select name="game-select" id="game-select">
             <option value="0">Tout</option>
             {% for category in category %}
                 
                 <option value="{{category.id}}">{{category.name}}</option>
-            
-            {% endfor %}
-        </select>
-        <button>valider</button>
+                {% endfor %}
+            </select>
+            <button>valider</button>
+        </form>
     </div>
+    
     
     <!-- Grille de jeu 3 jeux collun -->
     <div class="grid-library">
 
         {# + boucle pour afficher tout les jeux qui existe ligne par ligne #}
         {# afficher les information sur le jeux #}
+       
         {% for game in game %}
             <div class="card-game">
-
+           
                 <img src="{{ asset('/images/' ~ game.picture ) }}" alt="{{ game.name }}">
 
                 <div class="game-card-info">
@@ -39,8 +41,10 @@
                 </div>
             
                 <a href="#" >{{game.Users}}</a>
+                
             </div>
         {% endfor %}
+        
     </div>
 </main>
 {% endblock %}

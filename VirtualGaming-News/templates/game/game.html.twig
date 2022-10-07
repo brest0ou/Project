@@ -4,30 +4,42 @@
 {% block title %}Jeu - {{ parent() }}{% endblock %}
 
 {% block body %}
-<main style="margin-top: 100px; text-align:center; color:white;">
-    <div class="container-infogame" >
+<main class="main-game">
+    <div class="container-infogame wit " >
         <!-- La carte d'information utilisateur -->
-        <div class="bloc-top">
-            <img src="#" alt="#">
-            <img class="logo-game" src="" alt="">
-            <h2>{{game.name}}</h2>
+        <div class="bloc-top ">
+            <img class="backgrd-img" src="{{asset('/images/exemples-logo-tattoo-633de1b0ca5d2.png')}}" alt="#">
+            <div class="cont-logo">
+                <img class="logo-game" src="{{ asset('images/' ~ game.picture) }}"/>
+            </div>
+            <div class="name">
+                <h3>{{game.name}}</h3>
+            </div>
         </div>
-
+        
         <!-- La carte d'information utilisateur -->
         <div class="bloc-middle">
-            <img src="#" alt="#">
-            <p>{{category.name}}</p>
-            
+            <div>
+                {{dump(category.name)}}
+                {{dump(category.id)}}
+                <ul class="ul-cat">
+                    <li>{{category.name}}</li>
+                    <li>{{category.name}}</li>
+                    <li>{{category.name}}</li>
+                </ul>
+            </div>
+           
         </div>
+        {# 
             <h4></h4>
         <!-- La carte d'information utilisateur -->
         <div class="bloc-bot">
             <div class="sm-bloc-left">
                 <div class="description-game">
                     <div class="price">
-                        <p>{{game.price}}</p>
+                        <p>{{game.price}}</p> #}
                         {# link une images #}
-                        <img src="{{ asset('images/' ~ game.picture) }}"/>
+                        {# <img src="{{ asset('images/' ~ game.picture) }}"/>
                     </div>
                     <p> {{game.description}}</p>
                 </div>
@@ -39,7 +51,7 @@
                 </div>
                 {{game.duration}}
             </div>
-        </div>
+        </div> #}
     </div>
    
     {{ form_start(form) }}
