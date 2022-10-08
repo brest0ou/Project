@@ -14,7 +14,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class MainController extends AbstractController
 {
     #[Route('/', name: 'index')]
-    public function index(Request $request, GameRepository $gamesRepository): Response
+    public function index(Request $request, GameRepository $gamesRepository, PostRepository $postRepository): Response
     {
         // recupérer tout mes jeux *array rand tableau
         $max = 3;
@@ -30,25 +30,21 @@ class MainController extends AbstractController
             array_push($arrayGame, $games , $posts);
             
         };
-
+        // redirige l'utilisateur vers la page du jeux 
         $gameName = $request->get('search-game');
         $gamesRepo = $gamesRepository->findAll();
         
         $gamesTest = $gamesRepo[1];
         // dump($gamesTest->getName());
         // dump($gamesTest->getId());
-
         foreach ($gamesRepo as $key => $value)
         {
-            
             // dump($value->getName());
             // dump($value->getId());
-            
             if($gameName == $value->getName())
             {
                 // $gamesRepo = $gamesRepository->find($gameName);
                 dump($gameName);
-                
                 return $this->redirectToRoute('game_games',['id' => $value->getId()]);
             }        
         }
