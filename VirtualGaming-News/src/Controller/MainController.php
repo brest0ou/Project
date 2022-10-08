@@ -1,17 +1,20 @@
 <?php
 
 namespace App\Controller;
+use App\Form\GameRegisterType;
 use App\Repository\GameRepository;
 use App\Repository\PostRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\CategoryRepository;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 #[Route('', name: 'main_')]
 class MainController extends AbstractController
 {
     #[Route('/', name: 'index')]
-    public function index(GameRepository $gamesRepository, PostRepository $postRepository): Response
+    public function index(Request $request, GameRepository $gamesRepository): Response
     {
         // recupérer tout mes jeux *array rand tableau
         $max = 3;
@@ -19,7 +22,7 @@ class MainController extends AbstractController
         $post = $postRepository->findAll();
         $arrayGame = [];
     
-        for ($i = 0; $i < $max ; $i++)
+        for ($i = -1; $i < $max ; $i++)
         {
 
             $games = $game[array_rand($game)];
@@ -28,18 +31,31 @@ class MainController extends AbstractController
             
         };
 
-
-
-
-
-
-
-
-
-
-
+        $gameName = $request->get('search-game');
+        $gamesRepo = $gamesRepository->findAll();
         
+        $gamesTest = $gamesRepo[1];
+        // dump($gamesTest->getName());
+        // dump($gamesTest->getId());
+
+        foreach ($gamesRepo as $key => $value)
+        {
+            
+            // dump($value->getName());
+            // dump($value->getId());
+            
+            if($gameName == $value->getName())
+            {
+                // $gamesRepo = $gamesRepository->find($gameName);
+                dump($gameName);
+                
+                return $this->redirectToRoute('game_games',['id' => $value->getId()]);
+            }        
+        }
+    
         
+       
+
         return $this->render('main/index.html.twig', ['game' => $arrayGame]);
     }
 
@@ -54,7 +70,7 @@ class MainController extends AbstractController
     #[Route('/about', name: 'about')]
     public function about(): Response
     {
-
+        
         return $this->render('main/about.html.twig');
 
     }
