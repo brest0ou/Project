@@ -252,6 +252,7 @@ hr:not([size]) {
 /* bloc top */
 .main-game{
     max-width: 960px;
+    height: 1400px;
     margin: 0 auto;
 }
 
@@ -590,9 +591,7 @@ hr:not([size]) {
     color: white;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-/* .container-library h2{
-    font-size: 35px;
-} */
+
 .filter-game{
     text-align: center;
     margin-top: 30px;
@@ -601,24 +600,26 @@ hr:not([size]) {
 .filter-game label{
     padding-bottom: 10px;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 25px;
+    font-size: 16px;
     text-transform: uppercase;
     font-weight: 900;
     letter-spacing: 3px;
     margin-bottom: 20px;
 }
 .filter-game button{
-    /* height: 27px;
-    width: 65px; */
+    
     border-radius: 50px;
     border: none;
-    font-size: 15px;
-    font-weight: 800;
-    padding: 10px 10px;
-    margin-left: 2 0px;
+    font-size: 12px;
+    padding: 9px 9px;
+   
     text-transform: uppercase;
     color: #c75914;
     font-family: Arial, Helvetica, sans-serif;
+}
+.optioncateg{
+    text-align: center;
+    margin: 0 auto;
 }
 .filter-game select {
     text-align: center;
@@ -626,7 +627,7 @@ hr:not([size]) {
     text-transform: uppercase;
     font-size: 15px;
     font-weight: 800;
-    padding: 5px 80px;
+    padding: 3px 0px;
     border: none;
 }
 
@@ -648,7 +649,7 @@ hr:not([size]) {
     background-color: #3c3b53;
     /* height: 400px;
     width: 400px; */
-    padding: 10px 20px;
+    padding: 10px 13px;
     border-radius: 8px;
     display: block;
     font-size: 15px;
@@ -761,7 +762,6 @@ hr:not([size]) {
 
 .container-about h2{
     padding-top: 100px;
-    padding-bottom: 40px;
 
 }
 .about-bloc{
@@ -785,8 +785,12 @@ hr:not([size]) {
 }
 .about_contain p{
     margin: 50px 50px 0px 50px;
+    letter-spacing: 0.3px;
     text-align: center;
     color: #ffffff;
+}
+.margpabout{
+    padding-top: 16px;
 }
 .bloc_a img{
     height: 100%;
