@@ -4,17 +4,20 @@
 
 {% block body %}
 <main class="container-index">
+
     <div class="info-homepage">
         <p>VirtualGaming News est une plateforme de mise a disposition de jeux Crée par des dévellopeurs pour tous les utilisateurs</p>
     </div>
+
     <h2>Meilleurs Jeux</h2>
+    
     <div class="best-bloc">
         
         <div class="grid-bg">
 
              {% for game in game %} 
 
-                <div class="card-maxgame">
+                <a href="#" class="card-maxgame">
 
                     {# boucle sur 3 élement du tableau array_rand(tableau) array_rand($tableau, 3) #}
                         {# ~ game.picture / gamepicture truc comme sa#}
@@ -28,38 +31,37 @@
                         
                     </div>
                 
-                    <a href="#" ></a>
-                </div>
+                    
+                </a>
              {% endfor %} 
         </div>
-    
-        <h2>Meilleurs Postes</h2>
-        <div class="best-bloc">
-        
-            <div class="grid-bg">
-             {# {% for post in post %} #}
+    </div>
 
-             <div class="card-mingame">
+    <h2>Meilleurs Postes</h2>
+    <div class="best-bloc">
+        
+        <div class="grid-bg">
+             {% for post in post %}
+
+            <a href="#" class="card-mingame">
 
                 {# boucle sur 3 élement du tableau array_rand(tableau) array_rand($tableau, 3) #}
                     {# ~ post.picture / postpicture truc comme sa#}
-                <a href="#"><img src="{{ asset('/images/' ) }}" alt=""></a>
+                <img src="{{ asset('/images/' ) }}" alt="">
 
                 <div class="game-card-min">
                 
-                    <p>Nom Du Jeux :post.title</p>
+                    <p>Nom Du Jeux : {{post.title}}</p>
                     
-                    <span>Prix : post.text</span>
+                    <span> Post : {{post.text}}</span>
                 </div>
             
-                <a href="#" ></a>
-             </div>
-            {# {% endfor %} #}
-            </div>
-
-            
+                
+            </a>
+            {% endfor %}
+        </div>   
             {# affiché 3 post avec une bonne note #}
-        </div>
+        
     </div>
 </main>
 {% endblock %}

@@ -20,15 +20,17 @@ class MainController extends AbstractController
         $max = 3;
         $game = $gamesRepository->findAll();
         $post = $postRepository->findAll();
+
+        $arrayPost = [];
         $arrayGame = [];
     
-        for ($i = -1; $i < $max ; $i++)
+        for ($i = 0; $i < $max ; $i++)
         {
 
             $games = $game[array_rand($game)];
             $posts = $post[array_rand($post)];
-            array_push($arrayGame, $games , $posts);
-            
+            array_push($arrayGame, $games);
+            array_push($arrayPost, $posts);
         };
         // redirige l'utilisateur vers la page du jeux 
         $gameName = $request->get('search-game');
@@ -48,11 +50,8 @@ class MainController extends AbstractController
                 return $this->redirectToRoute('game_games',['id' => $value->getId()]);
             }        
         }
-    
-        
-       
 
-        return $this->render('main/index.html.twig', ['game' => $arrayGame]);
+        return $this->render('main/index.html.twig', ['game' => $arrayGame,'post' => $arrayPost]);
     }
 
     #[Route('/cgu', name: 'cgu')]
