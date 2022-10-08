@@ -5,6 +5,7 @@ use App\Repository\GameRepository;
 use App\Repository\PostRepository;
 use App\Repository\CategoryRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\BrowserKit\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -12,7 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class MainController extends AbstractController
 {
     #[Route('/', name: 'index')]
-    public function index(GameRepository $gamesRepository): Response
+    public function index(GameRepository $gamesRepository, Request $request): Response
     {
         // recupérer tout mes jeux *array rand tableau
         $max = 3;
@@ -22,11 +23,18 @@ class MainController extends AbstractController
     
         for ($i = 0; $i < $max ; $i++)
         {
+
             $games = $game[array_rand($game)];
             
             array_push($arrayGame, $games);
             
         };
+
+
+
+
+
+        
         
         return $this->render('main/index.html.twig', ['game' => $arrayGame]);
     }

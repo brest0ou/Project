@@ -33,14 +33,27 @@
         {% for game in game %}
             <a href="#" class="card-game">
            
-                <img src="{{ asset('/images/' ~ game.picture ) }}" alt="{{ game.name }}">
+                {# <img src="{{ asset('/images/' ~ game.picture ) }}" alt="{{ game.name }}">
 
                 <div class="game-card-info">
                     <p>Nom Du Jeux :{{game.name}}</p>
                     <span>Prix : {{game.price}}</span>
-                </div>
+                    <a href="#" >{{game.Users}}</a>
+                </div> #}
+                    <img src="{{ asset('/images/' ~ game.picture ) }}" alt="#">
+                    <div>
+                    <p>Nom Du Jeux :{{game.name}}</p>
+                    <span>Prix : {{game.price}}</span>
+                    </div>
+                    
+                    {# <a href="#" >{{game.Users}}</a> #}
+                
+
+                {# <div class="game-card-info">
+                    
+                </div> #}
             
-                <a href="#" >{{game.Users}}</a>
+                
                 
             </a>
         {% endfor %}
