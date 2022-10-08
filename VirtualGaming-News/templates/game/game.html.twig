@@ -4,10 +4,10 @@
 {% block title %}Jeu - {{ parent() }}{% endblock %}
 
 {% block body %}
-<main class="main-game">
-    <div class="container-infogame wit " >
+<main class="main-game wit">
+    <div class="container-infogame" >
         <!-- La carte d'information utilisateur -->
-        <div class="bloc-top ">
+        <div class="bloc-top">
             <img class="backgrd-img" src="{{asset('/images/exemples-logo-tattoo-633de1b0ca5d2.png')}}" alt="#">
             <div class="cont-logo">
                 <img class="logo-game" src="{{ asset('images/' ~ game.picture) }}"/>
@@ -28,30 +28,36 @@
             </div>
            
         </div>
-        {# 
+        
             <h4></h4>
         <!-- La carte d'information utilisateur -->
         <div class="bloc-bot">
             <div class="sm-bloc-left">
+                <div class="price">
+                    <p>Prix: {{game.price}} €</p> 
+                    {# link une images #}
+                    {# <img src="{{ asset('images/' ~ game.picture) }}"/> #}
+                </div>
                 <div class="description-game">
-                    <div class="price">
-                        <p>{{game.price}}</p> #}
-                        {# link une images #}
-                        {# <img src="{{ asset('images/' ~ game.picture) }}"/>
-                    </div>
-                    <p> {{game.description}}</p>
+                    <p class="p-desc"> {{game.description}} Lorem, ipsum 
+                    dolor sit amet consectetur 
+                    adipisicing elit. Cumque quam 
+                    optio minus perspiciatis 
+                    laboriosam reprehenderit 
+                    quis similique at odio debitis! Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus rem voluptates quod fugit. Excepturi obcaecati, numquam adipisci, necessitatibus reiciendis qui dolore temporibus maxime quas aperiam dicta perspiciatis doloremque quibusdam est atque tenetur recusandae, deleniti quod sed laudantium eum molestiae ullam! Facilis laborum expedita saepe, corrupti sunt voluptas obcaecati ex quis assumenda nobis corporis, enim consectetur? Consequatur veritatis ab minus ipsum.
+                     </p>
                 </div>
             </div>
             <div class="sm-bloc-right">
-                <p>{{game.totalweight}}</p>
+                <p class="p-weight">Poid du jeu: {{game.totalweight}} Gb</p>
                 <div class="get-file">
-                    {{game.develop}}
+                   <button>Fichier</button> 
+                   {# {{game.develop}} #}
                 </div>
-                {{game.duration}}
             </div>
-        </div> #}
+        </div>
     </div>
-   
+{#    
     {{ form_start(form) }}
 
         <div class="form-aligned">
@@ -65,11 +71,11 @@
             <button class="button">Ajouter</button>
         </div>
         
-    {{ form_end(form)}}
+    {{ form_end(form)}} #}
 
     <!-- Si on appuye sur le boutton alors le popup du formulaire crée un article apparait-->
 
-    <div class="form-popup">
+    {# <div class="form-popup">
         <div class="container-form-popup">
         {% for post in post %}
 
@@ -80,7 +86,7 @@
         {% endfor %}
             <!-- ici faut mettre le post-->
         </div>
-    </div>
+    </div> #}
 
 </main>
 {% endblock %}

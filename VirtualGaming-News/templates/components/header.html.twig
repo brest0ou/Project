@@ -8,11 +8,11 @@
 
                 <a href="{{path('game_library')}}" class="library hover">Store</a>
 
-                <form role="search" class="search_game">
+                <form methode="GET" class="search_game">
                 {# récupérer la valeur de l'input JS pour afficher la page de l'élement #}
-
                 {# controller parametre de jeux  et renvoie et modifie  #}
-                    <input type="search" class="game_search" id="search" placeholder="  Rechercher un jeux" aria-label="Search">
+                    <input type="search" name="search-game" class="game_search" id="search-game" placeholder="  Rechercher un jeux" aria-label="search-game">
+                    <button class="button">Rechercher</button>
                 </form>    
 
                 <a href="{{path('main_cgu')}}" class="cgu_link"> CGU</a>
