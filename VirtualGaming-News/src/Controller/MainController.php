@@ -10,6 +10,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
+use function PHPUnit\Framework\isEmpty;
+
 #[Route('', name: 'main_')]
 class MainController extends AbstractController
 {
@@ -23,7 +25,9 @@ class MainController extends AbstractController
 
         $arrayPost = [];
         $arrayGame = [];
-    
+        if (!isEmpty($game)) {
+            
+        
         for ($i = 0; $i < $max ; $i++)
         {
 
@@ -32,6 +36,8 @@ class MainController extends AbstractController
             array_push($arrayGame, $games);
             array_push($arrayPost, $posts);
         };
+
+        
         // redirige l'utilisateur vers la page du jeux 
         $gameName = $request->get('search-game');
         $gamesRepo = $gamesRepository->findAll();
@@ -50,7 +56,7 @@ class MainController extends AbstractController
                 return $this->redirectToRoute('game_games',['id' => $value->getId()]);
             }        
         }
-
+        }
         return $this->render('main/index.html.twig', ['game' => $arrayGame,'post' => $arrayPost]);
     }
 

@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+    <div class="bloc-signup" >
+            
+        <h2>Inscription</h2>
+
+            {{ form_start(form) }}
+            
+                <div class="form_aligned">
+                {{ form_row(form.username) }}
+                {{ form_row(form.email) }}
+                {{ form_row(form.password) }}
+                {{ form_row(form.lastname) }}
+                {{ form_row(form.firstname) }}
+                {{ form_row(form.picture) }}
+                {{ form_row(form.userRole) }}
+                </div>
+                
+                <div class="form-end">
+                    <button class="button">Confirmer</button>
+                </div>
+
+            {{ form_end(form) }}
+            
+        </div>
+{% endblock %}

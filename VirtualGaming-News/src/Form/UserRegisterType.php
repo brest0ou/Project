@@ -41,7 +41,7 @@ class UserRegisterType extends AbstractType
                 'label' => 'Logo',
             ])
 
-            ->add('roles', ChoiceType::class,[
+            ->add('userRole', ChoiceType::class,[
                 'choices' => 
                 [
                  'Dévellopeur' => "Développeur",

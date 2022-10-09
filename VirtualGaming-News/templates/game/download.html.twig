@@ -10,12 +10,13 @@
 
         {{ form_start(form) }}
 
+        <div class="form-aligned">
             {{ form_row(form.name) }}
             {{ form_row(form.description) }}
             {{ form_row(form.picture) }}
             {{ form_row(form.price) }}
             {{ form_row(form.duration) }}
-        <div class="form-aligned">
+        
             {# {{ form_row(form.totalWeight) }} #}
             
             {{ form_row(form.createdat) }}
