@@ -13,7 +13,7 @@
         <div class="grid-bg">
 
              {% for game in game %} 
-
+               
                 <div class="card-maxgame">
 
                     {# boucle sur 3 élement du tableau array_rand(tableau) array_rand($tableau, 3) #}
@@ -38,28 +38,30 @@
         
             <div class="grid-bg">
              {# {% for post in post %} #}
-
+            {% for post in post %} 
+                {% for post in post %} 
              <div class="card-mingame">
-
+                
                 {# boucle sur 3 élement du tableau array_rand(tableau) array_rand($tableau, 3) #}
                     {# ~ post.picture / postpicture truc comme sa#}
                 <a href="#"><img src="{{ asset('/images/' ) }}" alt=""></a>
 
                 <div class="game-card-min">
                 
-                    <p>Nom Du Jeux :post.title</p>
+                    <p>Nom Du Post : {{post.title}}</p>
                     
-                    <span>Prix : post.text</span>
+                    <span>Text: {{post.text}}</span>
                 </div>
             
                 <a href="#" ></a>
              </div>
             {# {% endfor %} #}
             </div>
-
-            
+                {% endfor %} 
+            {% endfor %} 
             {# affiché 3 post avec une bonne note #}
         </div>
+        
     </div>
 </main>
 {% endblock %}

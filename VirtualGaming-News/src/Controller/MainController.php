@@ -14,21 +14,23 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class MainController extends AbstractController
 {
     #[Route('/', name: 'index')]
-    public function index(Request $request, GameRepository $gamesRepository): Response
+    public function index(Request $request,PostRepository $postRepository, GameRepository $gamesRepository): Response
     {
         // recupérer tout mes jeux *array rand tableau
         $max = 3;
         $game = $gamesRepository->findAll();
         $post = $postRepository->findAll();
+
         $arrayGame = [];
+        $arrayPost = [];
     
-        for ($i = -1; $i < $max ; $i++)
+        for ($i = 0; $i < $max ; $i++)
         {
 
             $games = $game[array_rand($game)];
             $posts = $post[array_rand($post)];
-            array_push($arrayGame, $games , $posts);
-            
+            array_push($arrayGame, $games);
+            array_push($arrayPost, $post);
         };
 
         $gameName = $request->get('search-game');
@@ -40,14 +42,12 @@ class MainController extends AbstractController
 
         foreach ($gamesRepo as $key => $value)
         {
-            
             // dump($value->getName());
             // dump($value->getId());
             
             if($gameName == $value->getName())
             {
                 // $gamesRepo = $gamesRepository->find($gameName);
-                dump($gameName);
                 
                 return $this->redirectToRoute('game_games',['id' => $value->getId()]);
             }        
@@ -56,7 +56,7 @@ class MainController extends AbstractController
         
        
 
-        return $this->render('main/index.html.twig', ['game' => $arrayGame]);
+        return $this->render('main/index.html.twig', ['game' => $arrayGame, 'post' => $arrayPost]);
     }
 
     #[Route('/cgu', name: 'cgu')]
