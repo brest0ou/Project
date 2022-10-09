@@ -21,23 +21,17 @@
               
             </div>
 
-            <div class="log_in">
+            <div class="log_in" style="display: none;">
                 <a href="{{path('user_app_login')}}" class="log">Log In</a>
                 <a href="{{path('register')}}" class="log">Sign Up</a>
             </div>
 
-            <div class="dropdown_user_active" style="display: none;">
+            <div class="log_in" >
 
-                <a href="" class="user-logo">
-                    <img src="#" alt="">
-                </a>
-
-                <ul class="dropdown-menu">
-                    <li><a href="#">Profil</a></li>
-                    <li><a href="#">Paramétre</a></li>
-                    <li><a href="#">Déconnexion</a></li>
-                </ul>
-
+                 <a href="{#{{path('user_perso')}}#}" class="user-logo">Profil</a> 
+                <a href="{{path('game_download')}}" class="user-logo">ajouter un jeux</a>
+                <a href="{#{{path('logout')}}#}" class="user-logo">Déconnexion</a>
+                
             </div>
         </nav>
 

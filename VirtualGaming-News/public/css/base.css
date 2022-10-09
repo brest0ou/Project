@@ -701,34 +701,54 @@ hr:not([size]) {
     border-radius: 5px;
 }
 
-/* -----------log-in/register--------*/
+/* -----------log-in-----------*/
 
 .container-log{
     margin: 0 auto;
     width: 420px;
     color: white;
-}
-.toptop{
-    padding: 100px 20px 20px 20px;
     
 }
-.mailsign p{
-    margin-bottom: 7px;
+.bloclogin{
+    background: #272c3f;
+    margin-top: 130px;
+    border-radius: 15px;
 }
-
-.bloc-signup{
-    padding: 20px;
+.toptop{
+    padding: 30px 20px 20px 20px;
+    
 }
-.button-signin{
-    margin: 40px;
-    text-align: center;
+.formlogin{
+    margin: 15px auto;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    
 }
-.button-signin button{
-    height: 40px;
+.formlogin label{
+    padding: 10px 0px 10px 0px;
+}
+.formlogin input{
+    margin: 10px 0px 10px 0px;
+}
+.buttonlogin{
     width: 90px;
+    height: 30px;
+    margin: 15px auto;
     border-radius: 5px;
 }
 
+/* --------------register------------ */
+
+.bloc-signup{
+    margin: 0 auto;
+    padding-top: 100px;
+    width: 400px;
+    color: white;
+}
+.bloc-signup h2{
+    padding-bottom: 50px;
+}
 /* ----------------CGU-----------------*/
 
 .container-cgu{
@@ -809,7 +829,7 @@ hr:not([size]) {
 
 footer{
 
-    /* position: fixed; */
+    position: absolute;
     display: block;
     justify-content: space-around;
     bottom: 0;

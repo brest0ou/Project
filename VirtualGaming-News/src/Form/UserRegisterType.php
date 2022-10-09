@@ -42,6 +42,7 @@ class UserRegisterType extends AbstractType
             ])
 
             ->add('userRole', ChoiceType::class,[
+                'label' => 'vous êtes :',
                 'choices' => 
                 [
                  'Dévellopeur' => "Développeur",
