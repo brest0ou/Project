@@ -39,7 +39,7 @@ class RegistrationController extends AbstractController
             );
             $this->addFlash('success', 'Compte créé');
             $userRepository->add($user, true);
-
+            
             $file = $form->get('picture')->getData();
             if ($file) {
                 $FileName = $imageUploader->upload($file);
