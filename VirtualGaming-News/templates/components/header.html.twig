@@ -21,18 +21,29 @@
               
             </div>
 
-            <div class="log_in" style="display: none;">
-                <a href="{{path('user_app_login')}}" class="log">Log In</a>
-                <a href="{{path('register')}}" class="log">Sign Up</a>
-            </div>
+            
 
-            <div class="log_in" >
+            {% if app.user != null  %}
+               
+            
+                <div class="log_in" >
 
-                 <a href="{#{{path('user_perso')}}#}" class="user-logo">Profil</a> 
-                <a href="{{path('game_download')}}" class="user-logo">ajouter un jeux</a>
-                <a href="{#{{path('logout')}}#}" class="user-logo">Déconnexion</a>
+                    <a href="{{path('user_perso',{'id' : app.user.id})}}" class="user-logo">Profil</a> 
+                    
+                    <a href="{{path('game_download')}}" class="user-logo">ajouter un jeux</a>
+                    <a href="{{path('user_logout')}}" class="user-logo">Déconnexion</a>
                 
-            </div>
+                </div>
+
+            {% else %}
+
+                <div class="log_in" >
+                    <a href="{{path('user_app_login')}}" class="log">Log In</a>
+                    <a href="{{path('register')}}" class="log">Sign Up</a>
+                </div>
+
+
+            {% endif %}
         </nav>
 
         {# nav vertical #}

@@ -716,7 +716,6 @@ hr:not([size]) {
 }
 .toptop{
     padding: 30px 20px 20px 20px;
-    
 }
 .formlogin{
     margin: 15px auto;
@@ -744,6 +743,7 @@ hr:not([size]) {
     margin: 0 auto;
     padding-top: 100px;
     width: 400px;
+
     color: white;
 }
 .bloc-signup h2{
@@ -828,8 +828,7 @@ hr:not([size]) {
 /*---------------------------------------footer---------------------------------------*/ 
 
 footer{
-
-    position: absolute;
+    position: fixed;
     display: block;
     justify-content: space-around;
     bottom: 0;
@@ -854,11 +853,11 @@ footer{
 
 .copy {
     background-color: #222222;
-    height: 50px;
+    height: 30px;
     color: white;
     
 }
 .copy p{
     text-align: center;
-    padding: 15px;
+    padding: 5px;
 }

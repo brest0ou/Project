@@ -17,7 +17,7 @@
 
              {% for game in game %} 
 
-                <a href="#" class="card-maxgame">
+                <a href="{{path('game_games',{'id' : app.game.id})}}" class="card-maxgame">
 
                     {# boucle sur 3 élement du tableau array_rand(tableau) array_rand($tableau, 3) #}
                         {# ~ game.picture / gamepicture truc comme sa#}
@@ -43,7 +43,7 @@
         <div class="grid-bg">
              {% for post in post %}
 
-            <a href="#" class="card-mingame">
+            <a href="{{path('game_games',{'id' : app.game.id})}}" class="card-mingame">
 
                 {# boucle sur 3 élement du tableau array_rand(tableau) array_rand($tableau, 3) #}
                     {# ~ post.picture / postpicture truc comme sa#}
