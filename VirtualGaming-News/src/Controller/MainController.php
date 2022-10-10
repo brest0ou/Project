@@ -19,23 +19,48 @@ class MainController extends AbstractController
     public function index(Request $request, GameRepository $gamesRepository, PostRepository $postRepository): Response
     {
         // recupérer tout mes jeux *array rand tableau
-        $max = 3;
         $game = $gamesRepository->findAll();
         $post = $postRepository->findAll();
 
-        $arrayPost = [];
         $arrayGame = [];
-        if (!isEmpty($game)) {
-            
-        
-        for ($i = 0; $i < $max ; $i++)
-        {
+        $arrayPost = [];
 
+        $countArrayG = 0;
+        $countArrayP = 0;
+
+        while($countArrayG < 3)
+        {
             $games = $game[array_rand($game)];
+
+            $getNameGame = $games->getName();
+            
+            
+            if (!in_array($getNameGame, $arrayGame))
+            {  
+
+                array_push($arrayGame, $games);
+            }
+            $countArrayG = count($arrayGame);
+        }
+
+            
+        while($countArrayP < 3)
+        {
             $posts = $post[array_rand($post)];
-            array_push($arrayGame, $games);
-            array_push($arrayPost, $posts);
-        };
+            // $getNamePost = $posts->getTitle();
+
+            
+            if (!in_array($posts, $arrayPost))
+            {  
+                array_push($arrayPost, $posts);
+                
+            }
+
+            $countArrayP = count($arrayPost);
+        }
+      
+        // dump($arrayGame);
+        
 
         
         // redirige l'utilisateur vers la page du jeux 
@@ -52,12 +77,15 @@ class MainController extends AbstractController
             if($gameName == $value->getName())
             {
                 // $gamesRepo = $gamesRepository->find($gameName);
-                dump($gameName);
+                
                 return $this->redirectToRoute('game_games',['id' => $value->getId()]);
             }        
         }
-        }
-        return $this->render('main/index.html.twig', ['game' => $arrayGame,'post' => $arrayPost]);
+    
+        
+       
+
+        return $this->render('main/index.html.twig', ['game' => $arrayGame, 'post' => $arrayPost]);
     }
 
     #[Route('/cgu', name: 'cgu')]

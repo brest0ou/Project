@@ -50,7 +50,7 @@ class Game
 
     
     #[ORM\ManyToOne(inversedBy: 'games')]
-    #[ORM\JoinColumn(nullable: false)]
+    #[ORM\JoinColumn(nullable: true)]
     private ?User $users = null;
 
     #[ORM\OneToMany(mappedBy: 'gamesPosts', targetEntity: Post::class)]
