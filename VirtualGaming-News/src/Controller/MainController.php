@@ -42,8 +42,7 @@ class MainController extends AbstractController
             }
             $countArrayG = count($arrayGame);
         }
-
-            
+       
         while($countArrayP < 3)
         {
             $posts = $post[array_rand($post)];
@@ -57,11 +56,8 @@ class MainController extends AbstractController
             }
 
             $countArrayP = count($arrayPost);
-        }
-      
+        }    
         // dump($arrayGame);
-        
-
         
         // redirige l'utilisateur vers la page du jeux 
         $gameName = $request->get('search-game');
