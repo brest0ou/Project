@@ -17,21 +17,48 @@ class MainController extends AbstractController
     public function index(Request $request,PostRepository $postRepository, GameRepository $gamesRepository): Response
     {
         // recupérer tout mes jeux *array rand tableau
-        $max = 3;
         $game = $gamesRepository->findAll();
         $post = $postRepository->findAll();
 
         $arrayGame = [];
         $arrayPost = [];
-    
-        for ($i = 0; $i < $max ; $i++)
-        {
 
+        $countArrayG = 0;
+        $countArrayP = 0;
+
+        while($countArrayG < 3)
+        {
             $games = $game[array_rand($game)];
+
+            $getNameGame = $games->getName();
+            
+            
+            if (!in_array($getNameGame, $arrayGame))
+            {  
+
+                array_push($arrayGame, $games);
+            }
+            $countArrayG = count($arrayGame);
+        }
+
+            
+        while($countArrayP < 3)
+        {
             $posts = $post[array_rand($post)];
-            array_push($arrayGame, $games);
-            array_push($arrayPost, $post);
-        };
+            // $getNamePost = $posts->getTitle();
+
+            
+            if (!in_array($posts, $arrayPost))
+            {  
+                array_push($arrayPost, $posts);
+                
+            }
+
+            $countArrayP = count($arrayPost);
+        }
+      
+        // dump($arrayGame);
+        
 
         $gameName = $request->get('search-game');
         $gamesRepo = $gamesRepository->findAll();

@@ -33,32 +33,33 @@
              {% endfor %} 
         </div>
     
-        <h2>Meilleurs Postes</h2>
+        <h2>Meilleurs postes</h2>
         <div class="best-bloc">
         
             <div class="grid-bg">
              {# {% for post in post %} #}
-            {% for post in post %} 
                 {% for post in post %} 
-             <div class="card-mingame">
-                
-                {# boucle sur 3 élement du tableau array_rand(tableau) array_rand($tableau, 3) #}
-                    {# ~ post.picture / postpicture truc comme sa#}
-                <a href="#"><img src="{{ asset('/images/' ) }}" alt=""></a>
-
-                <div class="game-card-min">
-                
-                    <p>Nom Du Post : {{post.title}}</p>
+                    {# {% for post in post %}  #}
+                <div class="card-mingame">
                     
-                    <span>Text: {{post.text}}</span>
+                    {# boucle sur 3 élement du tableau array_rand(tableau) array_rand($tableau, 3) #}
+                        {# ~ post.picture / postpicture truc comme sa#}
+                    <a href="#"><img src="{{ asset('/images/' ) }}" alt=""></a>
+
+                    <div class="game-card-min">
+                    
+                        <p>Nom Du Post : {{post.title}}</p>
+                        
+                        <span>Text: {{post.text}}</span>
+                    </div>
+                
+                    <a href="#" ></a>
                 </div>
-            
-                <a href="#" ></a>
-             </div>
-            {# {% endfor %} #}
+                {% endfor %}
             </div>
-                {% endfor %} 
-            {% endfor %} 
+            
+                {# {% endfor %}  #}
+           
             {# affiché 3 post avec une bonne note #}
         </div>
         
