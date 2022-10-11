@@ -37,8 +37,7 @@ class RegistrationController extends AbstractController
                 )
 
             );
-            $this->addFlash('success', 'Compte créé');
-            $userRepository->add($user, true);
+            
 
             $file = $form->get('picture')->getData();
             if ($file) {
@@ -46,6 +45,8 @@ class RegistrationController extends AbstractController
                 $user->setPicture($FileName);
             }
             
+            $this->addFlash('success', 'Compte créé');
+            $userRepository->add($user, true);
             return $this->redirectToRoute('user_perso',['id' => $user->getId(),]);
 
         }

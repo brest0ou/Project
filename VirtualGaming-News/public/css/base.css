@@ -24,8 +24,8 @@ hr:not([size]) {
 /* -----------------Header ----------------- */
 
 .nav-top{
-
-    background: #323232;
+    background-color: #2d2d2d;
+    /* background: #272c3f; */
     position: fixed;
     z-index: 100;
     top: 0;
@@ -51,7 +51,10 @@ hr:not([size]) {
     font-size: 38px;
 }
 .logo:hover{
+
     background-color: rgb(89, 89, 89);
+    /* background-color:  #202631; */
+    border-radius: 15px;
     color: white;
 }
 .divNav{
@@ -127,6 +130,7 @@ hr:not([size]) {
 /* hover sur le bouton pour ouvrir la liste des discution entre amis et aussi pour la librairie */
 .icons-left{
     background-color: rgb(73, 73, 73) ;
+    /* background-color:#272c3f; */
     border-radius: 35px;
     display: block;
     margin-top: 20px;
@@ -170,6 +174,7 @@ hr:not([size]) {
     color: #ffffff;
     font-size: 20px;
     background-color:#252529;
+    /* background-color:#272c3f; */
     border-radius: 20px;
 }
 .container-index h2{
@@ -220,7 +225,9 @@ hr:not([size]) {
 /* -------meilleurpost------- */
 .card-mingame{
     margin: 50px auto;
-    background-color: #212128;
+    
+    background-color: #2d2d2d;
+    /* background-color: #272c3f; */
     height: 280px;
     width: 250px;
     border-radius: 8px;
@@ -303,7 +310,8 @@ hr:not([size]) {
 
     margin: 60px 0px;
     padding: 14px;
-    background-color: #303030ce;
+    background-color: #353535;
+    /* background-color: #272c3f; */
     border-radius: 6px;
 }
 
@@ -315,7 +323,8 @@ hr:not([size]) {
 }
 
 .ul-cat li{
-    background-color: #252424 ;
+    background-color: #2d2d2d;
+    /* background-color: #202631; */
     padding: 14px 20px;
     border-radius: 14px;
 }
@@ -336,8 +345,8 @@ hr:not([size]) {
 
     border-radius: 14px;
 
-
-    background-color:#303030ce;
+    background-color: #353535;
+    /* background-color: #272c3f; */
 }
 
 .price{
@@ -347,16 +356,17 @@ hr:not([size]) {
 
     top: 10px;
     right: 600px;
-    background-color: #252424;
+    background-color: #2d2d2d;
+    /* background-color: #202631; */
 }
 
 .p-desc{
     margin-top: 10px;
     padding: 10px;
     border-radius: 14px;
-
-    background-color: #252424;
-}
+    background-color: #2d2d2d;
+    /* background-color: #202631;*/
+} 
 
 
 .sm-bloc-right{
@@ -365,8 +375,8 @@ hr:not([size]) {
     height: 160px;
     text-align: center;
     border-radius: 14px;
-
-    background-color:#303030ce;
+    background-color: #353535;
+    /* background-color: #272c3f; */
 }
 
 .p-weight{
@@ -374,8 +384,8 @@ hr:not([size]) {
     padding: 10px;
     border-radius: 14px;
     max-width: 150px;
-
-    background-color: #252424;
+    background-color: #2d2d2d;
+    /* background-color: #202631; */
 }
 
 
@@ -388,6 +398,79 @@ hr:not([size]) {
 
     font-size: 1.1rem;
     color: white;
+    
+}
+
+.form-popup{
+    padding: 20px;
+    margin: 80px;
+    background-color: #2d2d2d;
+    /* background-color: #272c3f; */
+    border-radius: 14px;
+}
+
+.form-popup h3{
+    background-color: #353535;
+    /* background-color: #202631; */
+    padding: 20px;
+    border-radius: 100px;
+    width: 13%;
+
+    font-size: 1.5rem;
+}
+
+.container-form-popup{
+    padding: 20px;
+    margin-top: 40px;
+
+    
+}
+
+.cont-pict-title{
+    display: flex;
+    justify-content: space-between;
+
+    
+}
+
+.form-picture-g{
+    background-color: #353535;
+    /* background-color: #202631; */
+    padding: 10px;
+    border-radius: 14px 0px 0px 14px;
+}
+
+
+.form-picture-g img{
+    object-fit: fill;
+    width: 170px;
+    height: 170px;
+}
+
+.form-title-g{
+    background-color: #353535;
+    /* background-color: #202631; */
+    padding: 10px;
+    width: 100%;
+
+    font-size: 1.4rem;
+    text-align: center;
+
+    border-radius: 0px 14px 14px 0px;
+}
+
+.form-text-g{
+    background-color: #353535;
+    /* background-color: #202631; */
+    padding: 10px;
+}
+
+.form-aligned{
+    padding: 20px;
+    margin-top: 60px;
+    width: 500px;
+    margin: 0 auto;
+
     
 }
 
@@ -414,10 +497,7 @@ hr:not([size]) {
     justify-items: baseline;
 }
 
-.card-perso{
-    position: relative;
-    width: 220px;
-}
+
 
 .img-top{
     margin-bottom: 20px;
@@ -443,7 +523,8 @@ hr:not([size]) {
 .info-perso{
     padding: 10px;
     margin: 40px 14px 0px 14px;
-    background-color:#2b2b2bf1 ;
+    background-color: #2d2d2d;
+    /* background-color:#202631; ; */
     border-radius: 8px;
 }
 
@@ -454,7 +535,10 @@ hr:not([size]) {
 
 
 .card-perso{
-    background-color:#303030ce;
+    position: relative;
+    width: 220px;
+    background-color: #353535;
+    /* background-color:#272c3f; */
     padding-bottom: 14px;
     border-radius: 10px;
 }
@@ -465,7 +549,8 @@ hr:not([size]) {
 }
 
 .bloc-desc{
-    background-color: #303030ce;
+    background-color: #353535;
+    /* background-color: #272c3f; */
     padding: 14px;
     margin-bottom: 80px;
     border-radius: 14px;
@@ -480,7 +565,8 @@ hr:not([size]) {
 
     max-height: 130px;
     margin-bottom: 80px;
-    background-color: #2b2b2bf1;
+    background-color: #2d2d2d;
+    /* background-color: #202631; */
     padding: 12px;
     border-radius: 8px;
 }
@@ -489,7 +575,8 @@ hr:not([size]) {
 
 
 .container-post-perso{
-    background-color:#303030ce;
+    background-color: #353535;
+    /* background-color:#272c3f; */
     padding: 18px;
     border-radius: 10px;
     height: 770px;
@@ -506,7 +593,8 @@ hr:not([size]) {
 }
 
 .card-post-top, .card-post-bot{
-    background-color: #2b2b2bf1;
+    background-color: #2d2d2d;
+    /* background-color: #202631; */
     margin: 0 auto;
     padding: 14px;
     border-radius: 10px;
@@ -532,7 +620,8 @@ hr:not([size]) {
 }
 
 .description-post{
-    background-color:#272727f1;
+    background-color: #353535;
+    /* background-color:#272c3f; */
     padding: 20px 14px;
     margin-left: 10px;
     border-radius: 10px;
@@ -557,32 +646,37 @@ hr:not([size]) {
 
 /* trophé */
 
-.container-trophy{
-    max-height: 420px;
+
+.troph{
     width: 240px;
-    background-color:#303030ce ;
+    background-color: #353535;
+    /* background-color:#272c3f; */
     text-align: center;
-    padding: 0px 14px;
+    padding: 14px 14px;
     border-radius: 14px;
     
 }
 
 .container-trophy h3{
-    padding: 14px 0px;
+    padding: 0px 0px 14px 0px;
     
 }
 
 .bloc-trophy{
     display: grid;
     padding: 10px;
-    background-color:#2b2b2bf1;
+    background-color: #2d2d2d;
+    /* background-color:#202631; */
     border-radius: 10px;
     grid-template-columns: repeat(3,1fr);
-    
+    gap: 16px 40px;
 }
 /* trophé icon!*/
-.bloc-trophy p{
-    margin-bottom: 10px;
+.bloc-trophy i{
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    color: #c75914;
+    
 }
 /*---------------library--------------*/
 
@@ -648,7 +742,9 @@ hr:not([size]) {
 }
 .card-game{
     margin: 50px auto;
-    background-color: #3c3b53;
+    
+    background-color: #2d2d2d;
+    /* background-color: #3c3b53; */
     /* height: 400px;
     width: 400px; */
     padding: 10px 13px;
@@ -694,7 +790,7 @@ hr:not([size]) {
     color: white;
 }
 .form-end{
-    margin: 40px;
+    margin: 20px 20px 0px 20px;
     text-align: center;
 }
 .form-end button{
@@ -742,14 +838,15 @@ hr:not([size]) {
 /* --------------register------------ */
 
 .bloc-signup{
-    margin: 0 auto;
-    padding-top: 100px;
-    width: 400px;
-    height: 1000px;
+    background-color: #272c3f;
+    margin:72px auto;
+    padding: 20px;
+    max-width: 550px;
+    border-radius: 15px;   
     color: white;
 }
 .bloc-signup h2{
-    padding-bottom: 50px;
+    padding-bottom: 10px;
 }
 /* ----------------CGU-----------------*/
 
@@ -843,6 +940,7 @@ footer{
 }
 .link_media{
     background: rgba(83, 83, 83, 0.808);
+    /* background-color: #272c3f; */
     height: 50px;
     width: 350px;
     margin: 0 auto;
@@ -858,6 +956,7 @@ footer{
 
 .copy {
     background-color: #2d2d2d;
+    /* background-color:  #272c3f; */
     height: 30px;
     color: white;
     

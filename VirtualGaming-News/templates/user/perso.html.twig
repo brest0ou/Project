@@ -13,14 +13,12 @@
                     <img class="img-top" src="{{ asset('images/stationeers-633d9efe5a2f4.jpg')}}" alt="#">
                 </div>
                 <div class="circle-img">
-                    <img src="{{ asset('./asset/images/images.jpg') }}" alt="#">
+                    <img src="{{ asset('/images/' ~ user.Picture ) }}" alt="#">
                     {# <img src="{{ asset('images/' ~ user.Picture ) }}" alt="#"> #}
                 </div>
                 <div class="info-perso wit">
                     <p>Pseudo: {{user.username}}</p>
-                    <p>Email: {{user.email}}</p>
-                    <p>Pseudo: {{user.lastname}}</p>
-                    <p>Pseudo: {{user.firstname}}</p>
+                    <p>Rôle: {{user.userRole}}</p>
                 </div>
             </div>
         </div>
@@ -85,27 +83,19 @@
            <!-- nos onglet trophée-->
 
         <div class="container-trophy wit">
-            <h3>Trophée</h3>
-            <div class="bloc-trophy">
-            <!-- icon (Font Awesome icon) -->
-                <p>Icon1</p>
-                <p>Icon2</p>
-                <p>Icon3</p>
-                <p>dsdsq</p>
-                <p>qsdsq</p>
-                <p>Icon1</p>
-                <p>Icon2</p>
-                <p>Icon3</p>
-                <p>dsdsq</p>
-                <p>qsdsq</p>
-                <p>Icon1</p>
-                <p>Icon2</p>
-                <p>Icon3</p>
-                <p>dsdsq</p>
-                <p>qsdsq</p>
-            </div>
-        </div>   
-    
+            <div class="troph">
+                <h3>Trophée</h3>
+                <div class="bloc-trophy">
+                <!-- icon (Font Awesome icon) -->
+                    <i class="fa-sharp fa-solid fa-headset"></i>
+                    <i class="fa-sharp fa-solid fa-dice-d20"></i>
+                    <i class="fa-sharp fa-solid fa-book-skull"></i>
+                    <i class="fa-sharp fa-solid fa-hand-fist"></i>
+                    <i class="fa-sharp fa-solid fa-hat-wizard"></i>
+                
+                </div>
+            </div>  
+        </div>      
     </section>   
 </main>
 

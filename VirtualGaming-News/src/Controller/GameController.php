@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Game;
 use App\Entity\Post;
+use App\Entity\User;
 use App\Form\GameRegisterType;
 use App\Form\PostRegisterType;
 use App\Services\imageUploader;
@@ -24,7 +25,7 @@ class GameController extends AbstractController
     }
     
     #[Route('/{id}', name: 'games', requirements: ["id" => "\d+"])]
-    public function game(Game $game  ,Request $request, PostRepository $PostRepository,imageUploader $imageUploader): Response
+    public function game(Game $game, User $user  ,Request $request, PostRepository $PostRepository,imageUploader $imageUploader): Response
     {
         $post = new Post();
 
@@ -48,7 +49,7 @@ class GameController extends AbstractController
         }
         $posts = $PostRepository->findBy([ 'gamesPosts' => $game]); //->getId()
         
-        return $this->render('game/game.html.twig', [
+        return $this->render('game/game.html.twig', ['user' => $user,
             'game' => $game , 'category' => $game->getGamesCategory()[0],  'form' => $form->createView(), 'post' => $posts,
         ]);
         

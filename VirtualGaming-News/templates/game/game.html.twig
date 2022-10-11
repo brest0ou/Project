@@ -8,9 +8,9 @@
     <div class="container-infogame" >
         <!-- La carte d'information utilisateur -->
         <div class="bloc-top">
-            <img class="backgrd-img" src="{{asset('/images/exemples-logo-tattoo-633de1b0ca5d2.png')}}" alt="#">
+            <img class="backgrd-img" src="{{asset('/images/' ~ game.picture)}}" alt="#">
             <div class="cont-logo">
-                <img class="logo-game" src="{{ asset('images/' ~ game.picture) }}"/>
+                <img class="logo-game" src="{{ asset('/images/' ~ user.picture) }}"/>
             </div>
             <div class="name">
                 <h3>{{game.name}}</h3>
@@ -57,6 +57,40 @@
             </div>
         </div>
     </div>
+
+    <!-- Si on appuye sur le boutton alors le popup du formulaire crée un article apparait-->
+
+    <div class="form-popup">
+        <H3>Poste</H3>
+        <div class="container-form-popup">
+        
+            {% for post in post %}
+            <div class="cont-pict-title">
+                <div class="form-picture-g">
+                    {# {{post.picture}} #}
+                    <img src="{{asset('/images/stationeers-logo-63446f497a458.png')}}" alt="">
+                </div>
+                
+                <div class="form-title-g">
+                    {{post.title}}
+                    <p>Titre du poste</p>
+
+                    <div class="form-text-g">
+                    {# {{post.text}} #}
+                    <p>Joel, un survivant grisonnant d'un monde post-pandémique dangereux, qui a lentement perdu son sens de la moralité après la perte de sa fille, et Ellie, une jeune fille qui lutte elle-même pour trouver une véritable connexion humaine, sont forcés ensemble et doivent voyager à travers les États-Unis à la recherche d'un faux espoir pour l'avenir de l'humanité.</p>
+                </div>
+            </div>
+             
+        </div>
+            
+            
+           
+            
+            
+        {% endfor %}
+            <!-- ici faut mettre le post-->
+        </div>
+    </div> 
    
     {{ form_start(form) }}
 
@@ -73,20 +107,7 @@
         
     {{ form_end(form)}}
 
-    <!-- Si on appuye sur le boutton alors le popup du formulaire crée un article apparait-->
-
-    {# <div class="form-popup">
-        <div class="container-form-popup">
-        {% for post in post %}
-
-            {{post.picture}}
-            {{post.title}}
-            {{post.text}}
-            
-        {% endfor %}
-            <!-- ici faut mettre le post-->
-        </div>
-    </div> #}
+    
 
 </main>
 {% endblock %}
