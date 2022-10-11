@@ -98,7 +98,7 @@ class GameController extends AbstractController
             ]);
            
         }
-        
+      
         return $this->render('game/download.html.twig', ['form' => $form->createView(),]);
     }
 

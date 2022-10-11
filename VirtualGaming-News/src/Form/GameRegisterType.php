@@ -59,7 +59,7 @@ class GameRegisterType extends AbstractType
             ])
             
 
-            ->add('users', TextType::class, [
+            ->add('users', ChoiceType::class, [
                 'label' => 'Créateur du jeux :',
                 'required'   => false,
             ])
