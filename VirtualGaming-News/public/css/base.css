@@ -733,20 +733,18 @@ hr:not([size]) {
     height: 100%;
     margin-top: 50px;
     margin-bottom: 50px;
-    /* display: grid; */
-    /* grid-template-columns: repeat(3,1fr); */
-    display: flex;
+    display: grid; 
+    grid-template-columns: repeat(3,1fr);
+    /* display: flex;
     flex-wrap: wrap;
-    justify-content: left;
+    justify-content: left; */
     
 }
 .card-game{
     margin: 50px auto;
-    
-    background-color: #2d2d2d;
-    /* background-color: #3c3b53; */
-    /* height: 400px;
-    width: 400px; */
+    background-color: #3c3b53;
+    height: 370px;
+    width: 280px;
     padding: 10px 13px;
     border-radius: 8px;
     display: block;
@@ -759,7 +757,7 @@ hr:not([size]) {
     box-shadow: #232743 0px 0px 10px 10px;
 }
 .card-game img{
-    width: 300px;
+    width: 255px;
     height:300px;
     border-radius: 5px;
     margin-bottom: 10px;
@@ -768,17 +766,14 @@ hr:not([size]) {
     display: flex;
     
 } */
-.game-card-info p{
+/* .game-card-info p{
     padding-left: 5px;
 }
 .game-card-info span{
     padding-right: 5px;
 
-}
-.card-game a{
-    padding-left: 5px;
-    
-}
+} */
+
 
 /* --------------download------------- */
 

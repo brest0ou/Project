@@ -19,18 +19,18 @@ class RegistrationController extends AbstractController
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, UserRepository $userRepository,
     imageUploader $imageUploader,): Response
     {
-        
+
         $user = new User();
         $form = $this->createForm(UserRegisterType::class, $user);
-        
+
         $form->handleRequest($request);
-        
+
 
         if ($form->isSubmitted() && $form->isValid()) {
             // encode the plain password
-            
+
             $user->setPassword(
-                
+
                 $userPasswordHasher->hashPassword(
                     $user,
                     $form->get('password')->getData()
