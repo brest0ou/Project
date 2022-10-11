@@ -37,8 +37,8 @@ class RegistrationController extends AbstractController
                 )
 
             );
+           
             
-
             $file = $form->get('picture')->getData();
             if ($file) {
                 $FileName = $imageUploader->upload($file);
