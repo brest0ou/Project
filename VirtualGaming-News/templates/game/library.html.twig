@@ -33,18 +33,18 @@
         {% for game in game %}
             <a href="{#{{path('game_games',{'id' : app.game.id})}}#}" class="card-game">
            
-                {# <img src="{{ asset('/images/' ~ game.picture ) }}" alt="{{ game.name }}">
+                <img src="{{ asset('/images/' ~ game.picture ) }}" alt="{{ game.name }}">
 
                 <div class="game-card-info">
                     <p>Nom Du Jeux :{{game.name}}</p>
                     <span>Prix : {{game.price}}</span>
-                    <a href="#" >{{game.Users}}</a>
-                </div> #}
-                    <img src="{{ asset('/images/' ~ game.picture ) }}" alt="#">
+                    <p>{{game.Users}}</p> 
+                </div>
+                    {# <img src="{{ asset('/images/' ~ game.picture ) }}" alt="#">
                     <div>
                     <p>Nom Du Jeux :{{game.name}}</p>
                     <span>Prix : {{game.price}}</span>
-                    </div>
+                    </div> #}
                     
                     {# <a href="#" >{{game.Users}}</a> #}
                 

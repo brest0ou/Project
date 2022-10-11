@@ -7,7 +7,6 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints\Assert;
 
 
 #[ORM\Entity(repositoryClass: GameRepository::class)]
@@ -286,11 +285,9 @@ class Game
 
         return $this;
     }
-    
     public function __toString()
     {
         return $this->getName();
         return $this->getUsers();
     }
- 
 }

@@ -28,6 +28,8 @@ security:
             logout:
                 path: user_logout
             
+    # ...
+
                 # where to redirect after logout
                 # target: app_any_route
             # activate different ways to authenticate
